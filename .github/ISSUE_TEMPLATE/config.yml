@@ -1,5 +1,1 @@
 blank_issues_enabled: false
-contact_links:
-  - name: Send a private tip
-    url: mailto:agent-incidents@jowimo.com
-    about: Use email for material that should not appear in a GitHub issue.
