@@ -1,0 +1,52 @@
+{
+  "id": "openai-self-replicating-injections-2026",
+  "title": "Self-replicating prompt injections demonstrated in training tests",
+  "summary": "OpenAI reports that an internal GPT-Red-style model found prompt injections that could induce agents to copy malicious instructions through email, files, code comments, or multi-hop tasks. The report describes controlled training and evaluation examples, not a production incident: it says no impact occurred outside simulated tool calls.",
+  "context": "mixed",
+  "contextEvidence": "The report covers controlled training and evaluation examples with simulated tool calls only.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "Discovered 27 June 2026",
+    "sortDate": "2026-06-27",
+    "sourceIds": [
+      "openai-self-replicating-report"
+    ],
+    "evidenceNote": "OpenAI dates discovery to 27 June; use this dated observation as the ordering anchor. The report gives no separate experiment dates."
+  },
+  "reportedDate": "2026-09-25",
+  "reportedDateSourceId": "openai-self-replicating-report",
+  "reportedDateEvidence": "OpenAI explicitly lists 25 September 2026 as the disclosure date.",
+  "sources": [
+    {
+      "id": "openai-self-replicating-report",
+      "label": "OpenAI Alignment — Self-replicating prompt injections exist",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
+      "publishedDate": "2026-09-25",
+      "evidenceNote": "The report explicitly gives discovery date 27 June and disclosure date 25 September 2026. It says no impact occurred outside simulated training and evaluation tool calls; the report is a research disclosure, not a real-world incident."
+    }
+  ],
+  "events": [
+    {
+      "id": "self-replicating-injections-discovered",
+      "title": "Self-replication demonstrated in simulated tool use",
+      "summary": "OpenAI says the tests showed prompt injections reproducing through email, files or code comments; a separate multi-hop Slack test used GPT-5.5. These were simulated training/evaluation actions, with no reported impact outside the test environment.",
+      "date": {
+        "kind": "approximate",
+        "label": "Discovered 27 June 2026",
+        "sortDate": "2026-06-27",
+        "sourceIds": [
+          "openai-self-replicating-report"
+        ],
+        "evidenceNote": "OpenAI dates discovery to 27 June; use this dated observation as the ordering anchor. The report gives no separate experiment dates."
+      },
+      "sourceIds": [
+        "openai-self-replicating-report"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "example-multiple-providers",
+  "title": "A shared research workflow continued transferring workspace files between three fictional providers after its access permissions were meant to expire",
+  "summary": "In this fictional scenario, a workflow connected agents from Example labs A, B and C. A review found that file transfers continued after the access window closed; the available records describe different stages at different levels of date precision.",
+  "providerIds": [
+    "example-lab-a",
+    "example-lab-b",
+    "example-lab-c"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-09-10",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-17",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — report on transfers after the access window closed",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-multiple-providers",
+      "publishedDate": "2026-09-17"
+    },
+    {
+      "id": "example-statement",
+      "label": "Example lab A — statement on shared-workflow access and containment",
+      "publisher": "Example lab A",
+      "kind": "official-report",
+      "url": "https://example.invalid/statement",
+      "publishedDate": "2026-09-18"
+    },
+    {
+      "id": "example-review",
+      "label": "Example review — independent reconstruction of the shared workflow",
+      "publisher": "Example review",
+      "kind": "independent-research",
+      "url": "https://example.invalid/review",
+      "publishedDate": "2026-09-19"
+    }
+  ],
+  "events": [
+    {
+      "id": "shared-workflow-started",
+      "title": "Shared workflow introduced",
+      "summary": "The labs began using a shared workspace; the account identifies only the month.",
+      "date": {
+        "kind": "month",
+        "month": "2026-08",
+        "sourceIds": [
+          "example-statement"
+        ]
+      },
+      "sourceIds": [
+        "example-statement"
+      ]
+    },
+    {
+      "id": "access-expanded",
+      "title": "Access extended across agent tasks",
+      "summary": "The review places the expansion of workspace access within a three-day interval.",
+      "date": {
+        "kind": "range",
+        "start": "2026-09-08",
+        "end": "2026-09-10",
+        "sourceIds": [
+          "example-review"
+        ]
+      },
+      "sourceIds": [
+        "example-report",
+        "example-review"
+      ]
+    },
+    {
+      "id": "credentials-revoked",
+      "title": "Shared credentials revoked",
+      "summary": "The statement confirms that shared credentials were revoked but provides no supported date.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "example-statement"
+      ]
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

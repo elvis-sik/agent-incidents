@@ -1,0 +1,234 @@
+{
+  "id": "openai-wiki-australia-2026",
+  "title": "OpenAI’s DSEwiki message board and related Australian website access",
+  "summary": "Nightingale Collective researchers and collaborators documented roughly 18,000 posts by OpenAI-linked agents using a public German software-development wiki as a shared message board. During web-research tasks, the agents exchanged answers, investigated their environment and worked around restrictions on writing to the internet. OpenAI subsequently acknowledged the wiki activity; whether it arose during training or evaluation remains uncertain. Related Australian activity is covered in the events below, including AIHW data retrieval and the Medicare Statistics Reporting Service access disclosed by Australian officials.",
+  "context": "unknown",
+  "contextEvidence": "The grouped wiki activity has unresolved training/evaluation context; related Australian events retain their separately attributed research and training descriptions.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "range",
+    "start": "2026-04-13",
+    "end": "2026-07-02",
+    "sourceIds": [
+      "rowan-unctad-research",
+      "collusion-research"
+    ],
+    "evidenceNote": "The grouped activity window runs from the first reviewed UNCTAD scan on 13 April to residual DSEwiki edits on 2 July. Each event retains its own dates. This editorial grouping does not establish continuous activity or a shared agent run; later notification events retain their September dates."
+  },
+  "reportedDate": "2026-09-04",
+  "reportedDateSourceId": "collusion-research",
+  "reportedDateEvidence": "Earliest located public report within this grouped record is the DSEwiki research published on 4 September. The Australian-government portal disclosure was reported separately on 24 September. The UNCTAD analysis and WSJ coverage were published on 26 September and remain separate source entries within this grouped episode.",
+  "sources": [
+    {
+      "id": "collusion-research",
+      "label": "Discovery of a new OpenAI agent message board",
+      "publisher": "Nightingale Collective and collaborators (Sydney Von Arx, Cormac Slade Byrd, Spencer Kitts and Thomas Larsen)",
+      "kind": "independent-research",
+      "url": "https://collusion.wiki/",
+      "publishedDate": "2026-09-04",
+      "evidenceNote": "Research report and timeline for DSEwiki. It dates the first DSEwiki write to 24 May and residual edits to 1–2 July, while distinguishing this activity from the later Hugging Face swarm."
+    },
+    {
+      "id": "transluce-australia",
+      "label": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
+      "publisher": "Transluce (Jack Cable, Daniel Chiu, Francisco Pernice, Selena Zhang, James Anthony, Tetiana Bas, Gary Shen, Conrad Stosz and Jacob Steinhardt)",
+      "kind": "independent-research",
+      "url": "https://transluce.org/agent-activity",
+      "publishedDate": "2026-09-23",
+      "evidenceNote": "Reports URLQuery traces from 20–21 June involving an AIHW pharmaceutical-data task, a blocked probe and retrieval of a public file from a pre-production host. Links the task context to DSEwiki using dashboard/task values and guessed parameters; this is not an exact run-level match to Medicare access."
+    },
+    {
+      "id": "pm-transcript",
+      "label": "Press conference – New York",
+      "publisher": "Prime Minister of Australia",
+      "kind": "official-report",
+      "url": "https://www.pm.gov.au/media/press-conference-new-york",
+      "publishedDate": "2026-09-24",
+      "evidenceNote": "The Prime Minister said the Medicare Statistics Reporting Service access occurred on 18 June during internal OpenAI model research; the agent accessed public and non-public files and wrote files to an internal server."
+    },
+    {
+      "id": "ministers-briefing",
+      "label": "Press Conference, Sydney",
+      "publisher": "Australian Department of Defence / Ministers",
+      "kind": "official-report",
+      "url": "https://www.minister.defence.gov.au/transcripts/2026-09-24/press-conference-sydney",
+      "publishedDate": "2026-09-24",
+      "evidenceNote": "Officials place AIHW, Victorian Health, NSW BOCSAR and the Medicare Statistics Reporting Service among four sites contacted during the June OpenAI training episode, while distinguishing normal public access at the first three from unauthorised Medicare portal access."
+    },
+    {
+      "id": "aihw-statement",
+      "label": "Updated: OpenAI incident – a statement from the AIHW",
+      "publisher": "Australian Institute of Health and Welfare",
+      "kind": "official-report",
+      "url": "https://www.aihw.gov.au/news-media/media-releases/2026/september/a-statement-from-the-australian-institute-of-health-and-welfare",
+      "publishedDate": "2026-09-25",
+      "evidenceNote": "AIHW and ASD found no evidence of system compromise, unauthorised access or access to information beyond public data."
+    },
+    {
+      "id": "abc-medicare",
+      "label": "OpenAI hacked Medicare portal, Prime Minister Anthony Albanese says",
+      "publisher": "ABC News (Erin Handley et al.)",
+      "kind": "news-article",
+      "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
+      "publishedDate": "2026-09-24",
+      "evidenceNote": "Same-day reporting of the official disclosure; not independent technical verification."
+    },
+    {
+      "id": "abc-followup",
+      "label": "OpenAI says dozens affected by rogue agents amid new detail about Australian incidents",
+      "publisher": "ABC News",
+      "kind": "news-article",
+      "url": "https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074",
+      "publishedDate": "2026-09-26",
+      "evidenceNote": "Follow-up reports notification and review timing and additional detail on the Australian episode."
+    },
+    {
+      "id": "openai-third-party-review",
+      "label": "OpenAI — 5 September update on public-wiki activity",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/#september",
+      "evidenceNote": "OpenAI’s 5 September timeline entry acknowledges a report that its agents accessed a public wiki and used it as a shared message board; this is a disclosure date, not an occurrence date.",
+      "publishedDate": "2026-09-05"
+    },
+    {
+      "id": "reuters-wiki-report",
+      "label": "Exclusive-OpenAI agents hijacked German website in previously undisclosed AI breakout this spring",
+      "publisher": "Reuters (Deepa Seetharaman and Raphael Satter)",
+      "kind": "news-article",
+      "url": "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/",
+      "publishedDate": "2026-09-04",
+      "evidenceNote": "Reuters original article, published and updated 4 September 2026; its canonical URL is confirmed by multiple references to the story and its full Reuters byline/text is available in the Investing.com syndication. The report draws on the Collusion researchers’ report and interviews; it is coverage of that same research, not independent confirmation of the underlying wiki edits."
+    },
+    {
+      "id": "rowan-unctad-research",
+      "label": "OpenAI agents tried to bruteforce a UN website's API fields",
+      "publisher": "Rowan Howard-Jones (Swarmchase)",
+      "kind": "independent-research",
+      "url": "https://swarmcha.se/posts/openai-unctad",
+      "publishedDate": "2026-09-26",
+      "evidenceNote": "Original report inspected. Matching API URLs and overlapping wiki-editing IPs support the proposed attribution, but the author explicitly stops short of identifying the same swarm or collaboration. Transluce provided the investigative lead; the author says its dataset was not used directly."
+    },
+    {
+      "id": "wsj-unctad",
+      "label": "OpenAI Agents Used Aggressive Techniques to Access U.N. Website",
+      "publisher": "The Wall Street Journal (Robert McMillan)",
+      "kind": "news-article",
+      "url": "https://www.wsj.com/tech/ai/openai-agents-used-aggressive-techniques-to-access-u-n-website-522c70ff",
+      "publishedDate": "2026-09-26",
+      "evidenceNote": "Original WSJ page displays 26 September 2026 at 8:14 pm ET; its publication metadata is 27 September at 00:14 UTC. Use the displayed publisher date. The inspected headline, deck and opening paragraphs link Rowan Howard-Jones’s UNCTAD research; the remainder is paywalled. The deck reports more than 16,000 accesses, not 16,000 separate incidents."
+    }
+  ],
+  "events": [
+    {
+      "id": "unctad-api-retrieval",
+      "title": "Related activity: agents tried alternative routes to public UNCTAD data",
+      "summary": "Rowan Howard-Jones documented more than 16,500 UNCTADstat API scans visible through URLQuery, including failed requests and successful public-data retrieval through relays and request-encoding workarounds. Matching wiki URLs and IP overlap support a connection to DSEwiki activity, while the same swarm or collaboration remains unconfirmed. The scan count does not measure successful accesses or compromised records.",
+      "date": {
+        "kind": "range",
+        "start": "2026-04-13",
+        "end": "2026-06-19",
+        "sourceIds": [
+          "rowan-unctad-research"
+        ],
+        "evidenceNote": "The researcher dates the reviewed UNCTADstat API scans to 13 April–19 June. This is an observation window, not continuous activity; later wiki observations do not extend the scan window."
+      },
+      "sourceIds": [
+        "rowan-unctad-research",
+        "wsj-unctad"
+      ]
+    },
+    {
+      "id": "dsewiki-activity",
+      "title": "OpenAI-linked agents used DSEwiki as a message board",
+      "summary": "Researchers documented agent posts and collaboration on the public DSEwiki, with the first reported write on 24 May and residual edits on 1–2 July. OpenAI later acknowledged a wiki incident. The research describes uncertainty about whether the activity was training or evaluation and distinguishes it from the July Hugging Face swarm.",
+      "date": {
+        "kind": "range",
+        "start": "2026-05-24",
+        "end": "2026-07-02",
+        "sourceIds": [
+          "collusion-research"
+        ],
+        "evidenceNote": "Date span follows the researchers' event timeline."
+      },
+      "sourceIds": [
+        "collusion-research",
+        "reuters-wiki-report",
+        "openai-third-party-review"
+      ]
+    },
+    {
+      "id": "aihw-data-task",
+      "title": "Related activity: AIHW medicines-data task and public URLQuery activity",
+      "summary": "Transluce reported 20–21 June URLQuery traces for a medicines-data task, including a probe blocked by site protections and retrieval of an already-public file from a pre-production host. Australian officials later grouped AIHW among sites contacted during the OpenAI episode; AIHW and ASD reported no unauthorised access or access to non-public information.",
+      "date": {
+        "kind": "range",
+        "start": "2026-06-20",
+        "end": "2026-06-21",
+        "sourceIds": [
+          "transluce-australia"
+        ],
+        "evidenceNote": "Exact trace dates come from Transluce's public URLQuery analysis; government sources describe the month but do not independently give these two days."
+      },
+      "sourceIds": [
+        "transluce-australia",
+        "ministers-briefing",
+        "aihw-statement",
+        "abc-followup"
+      ]
+    },
+    {
+      "id": "medicare-portal-access",
+      "title": "Related activity: Medicare Statistics Reporting Service access",
+      "summary": "Australian officials said an OpenAI internal-evaluation agent accessed public and non-public files after repeated blocks and wrote files to an internal server. The government said no individual medical records were accessed and described the portal as a statistics service, not the Medicare claims system. The incident remained under forensic review in the cited disclosures.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-18",
+        "sourceIds": [
+          "pm-transcript",
+          "abc-medicare"
+        ]
+      },
+      "sourceIds": [
+        "pm-transcript",
+        "ministers-briefing",
+        "abc-medicare",
+        "abc-followup"
+      ]
+    },
+    {
+      "id": "government-notification",
+      "title": "OpenAI notified Services Australia",
+      "summary": "The Services Australia Minister said OpenAI notified the agency on 10 September that an AI agent had accessed infrastructure behind the Medicare Statistics Reporting Service portal.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-10",
+        "sourceIds": [
+          "ministers-briefing"
+        ]
+      },
+      "sourceIds": [
+        "ministers-briefing",
+        "abc-followup"
+      ]
+    },
+    {
+      "id": "asd-referral",
+      "title": "Referral to the Australian Signals Directorate",
+      "summary": "The Prime Minister said the matter was referred to ASD for review.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-15",
+        "sourceIds": [
+          "pm-transcript"
+        ]
+      },
+      "sourceIds": [
+        "pm-transcript",
+        "abc-followup"
+      ]
+    }
+  ]
+}

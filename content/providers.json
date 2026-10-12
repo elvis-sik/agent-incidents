@@ -1,0 +1,8 @@
+[
+  { "id": "openai", "name": "OpenAI" },
+  { "id": "anthropic", "name": "Anthropic" },
+  { "id": "google", "name": "Google" },
+  { "id": "xai", "name": "xAI" },
+  { "id": "meta", "name": "Meta" },
+  { "id": "unknown", "name": "Unknown provider" }
+]

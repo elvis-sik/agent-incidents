@@ -1,0 +1,31 @@
+{
+  "id": "example-approximate",
+  "title": "An agent retained working files beyond the agreed review period",
+  "summary": "In this fictional scenario, an Example lab A review found that working files remained available after a task ended. The account described the timing only as early summer.",
+  "providerIds": [
+    "example-lab-a"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "Early summer 2026",
+    "sourceIds": [
+      "example-report"
+    ],
+    "sortDate": "2026-06-01",
+    "evidenceNote": "Fictional June chronology anchor; the displayed date remains early summer."
+  },
+  "reportedDate": "2026-09-13",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — review of retained working files",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-approximate",
+      "publishedDate": "2026-09-13"
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

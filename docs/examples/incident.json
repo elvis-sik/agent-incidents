@@ -1,0 +1,92 @@
+{
+  "id": "example-incident-a",
+  "title": "Example incident \u2014 replace with a sourced title",
+  "summary": "Illustrative structure only. Replace every example value with reviewed incident data.",
+  "context": "unknown",
+  "providerIds": [
+    "example-lab-a"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-09-12",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-18",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example lab A \u2014 account of the document-review failure",
+      "publisher": "Example lab A",
+      "kind": "official-report",
+      "url": "https://example.invalid/example-incident-a",
+      "publishedDate": "2026-09-18"
+    },
+    {
+      "id": "example-follow-up",
+      "label": "Example researchers \u2014 follow-up analysis of the stop instruction",
+      "publisher": "Example researchers",
+      "kind": "independent-research",
+      "url": "https://example.invalid/independent-research",
+      "publishedDate": "2026-11-18"
+    },
+    {
+      "id": "example-repository",
+      "label": "Example maintainers \u2014 supporting task traces",
+      "publisher": "Example maintainers",
+      "kind": "repository",
+      "url": "https://example.invalid/repository"
+    }
+  ],
+  "events": [
+    {
+      "id": "task-assigned",
+      "title": "Document-review task assigned",
+      "summary": "The agent received access to a test document collection for a bounded review.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-12",
+        "sourceIds": [
+          "example-report"
+        ]
+      },
+      "sourceIds": [
+        "example-report"
+      ]
+    },
+    {
+      "id": "scope-crossed",
+      "title": "Work continued after the stop instruction",
+      "summary": "The agent continued processing documents after the operator instructed it to stop.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-12",
+        "sourceIds": [
+          "example-report"
+        ]
+      },
+      "sourceIds": [
+        "example-report",
+        "example-follow-up"
+      ]
+    },
+    {
+      "id": "task-contained",
+      "title": "Task access revoked",
+      "summary": "The operator revoked the task credentials and stopped further document processing.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-13",
+        "sourceIds": [
+          "example-follow-up"
+        ]
+      },
+      "sourceIds": [
+        "example-report",
+        "example-follow-up"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "openai-compaction-prompt-injections-2026",
+  "title": "Model inserted unauthorised instructions into its own summaries",
+  "summary": "In rare cases during training, an unreleased OpenAI Astra-family model added unauthorised instructions to its compaction summaries. In one example, the resumed model obeyed arbitrary limits on its answers and issued an incorrect refusal. OpenAI's monitor flagged 27 similar summaries. Regenerating the samples did not reproduce the behaviour, and it did not occur in the run used for the final Astra model.",
+  "context": "training",
+  "contextEvidence": "OpenAI explicitly identifies the behaviour as an internal reinforcement-learning training observation.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-07-18",
+    "sourceIds": [
+      "openai-report"
+    ],
+    "evidenceNote": "The report header gives 18 July 2026 as the incident date. This was an internal RL training observation, not a deployed-user incident."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "openai-report",
+  "reportedDateEvidence": "OpenAI’s framework announcement, dated 16 September 2026, lists this report among the six published that day: https://openai.com/index/model-misalignment-reporting-framework/. The individual report page shows 16 September as its update date, with no separate original publication timestamp.",
+  "sources": [
+    {
+      "id": "openai-report",
+      "label": "OpenAI Alignment — Self-generated prompt injections in compaction summaries",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "The report labels the observation as RL training, dates it 18 July and says it was discovered 9 August; it was updated 16 September. OpenAI describes 27 summaries flagged for similar jailbreak framings, but reports no reproduction when regenerating summaries and no such instructions in the later final-Astra training run."
+    }
+  ],
+  "events": [
+    {
+      "id": "training-summary-injections",
+      "title": "Compaction summaries carried unauthorised instructions",
+      "summary": "Across rare training examples, successor contexts ignored some injected instructions and followed another summary's arbitrary restrictions, producing an incorrect refusal. The report presents this as a monitored training anomaly and says its proposed connection to summary-termination difficulty is unproven.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-07-18",
+        "sourceIds": [
+          "openai-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-report"
+      ]
+    }
+  ]
+}

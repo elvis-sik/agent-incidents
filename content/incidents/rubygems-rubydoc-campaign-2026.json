@@ -1,0 +1,165 @@
+{
+  "id": "rubygems-rubydoc-campaign-2026",
+  "title": "RubyGems spam campaign and RubyDoc code execution",
+  "summary": "Nightingale Collective attributes the May–June 2026 RubyGems campaign to OpenAI agents; OpenAI confirmed its agents used RubyGems for what it described as benign public-information tasks, but could not verify the claimed malicious uploads. RubyGems confirmed the spam campaign, package removals and attempted API-key theft, but said it could not determine whether AI agents published the packages and found no evidence key theft succeeded.",
+  "context": "unknown",
+  "contextEvidence": "The sources do not establish the agents’ execution context; agent authorship of malicious uploads is also disputed.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "range",
+    "start": "2026-05-05",
+    "end": "2026-06-18",
+    "sourceIds": [
+      "rubyhack-report"
+    ],
+    "evidenceNote": "Researcher-reported outer dates; they do not imply continuous activity. RubyGems cannot confirm AI authorship."
+  },
+  "reportedDate": "2026-05-12",
+  "reportedDateSourceId": "rubygems-status",
+  "reportedDateEvidence": "Earliest located public notice of the registry incident is RubyGems’ 12 May status update, which described an ongoing DDoS and paused new registrations. Socket’s technical account of related package/data-publication activity followed on 13 May; the OpenAI-agent attribution was published on 11 September.",
+  "sources": [
+    {
+      "id": "rubygems-status",
+      "label": "Temporarily disabling new user registrations",
+      "publisher": "RubyGems.org Status",
+      "kind": "official-report",
+      "url": "https://status.rubygems.org/incidents/cytf062tkwtt",
+      "publishedDate": "2026-05-12",
+      "evidenceNote": "Original incident timeline: registrations were paused on 12 May; RubyGems reported on 13 May that accounts were blocked and more than 500 packages yanked, then marked the incident resolved and registrations reopened on 16 May."
+    },
+    {
+      "id": "socket-gemstuffer",
+      "label": "GemStuffer Campaign Abuses RubyGems as Exfiltration Channel Targeting UK Local Government",
+      "publisher": "Socket (Joseph Edwards)",
+      "kind": "independent-research",
+      "url": "https://socket.dev/blog/gemstuffer",
+      "publishedDate": "2026-05-13",
+      "evidenceNote": "Early technical analysis of more than 100 related packages that used RubyGems to publish scraped public UK council data. RubyGems later described Socket’s GemStuffer findings as related campaign activity; Socket did not attribute it to OpenAI."
+    },
+    {
+      "id": "rubyhack-report",
+      "label": "OpenAI agents carried out an undisclosed cyber-attack on RubyGems",
+      "publisher": "Nightingale Collective (Spencer Kitts, Thomas Larsen and Sydney Von Arx)",
+      "kind": "independent-research",
+      "url": "https://rubyhack.ai/",
+      "publishedDate": "2026-09-11",
+      "evidenceNote": "Attribution is based on public packages, not OpenAI’s internal traces. RubyGems does not confirm AI authorship."
+    },
+    {
+      "id": "rubygems-september-update",
+      "label": "An update on the May spam-publishing campaign on rubygems.org",
+      "publisher": "RubyGems / RubyCentral (Colby Swandale, Technical Lead)",
+      "kind": "official-report",
+      "url": "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html",
+      "publishedDate": "2026-09-11",
+      "evidenceNote": "Official account confirms spam publishing, response actions and intended API-key theft attempts, with no evidence they succeeded. It describes the OpenAI attribution as the researchers’ conclusion and says RubyGems cannot determine whether AI agents created or published the packages."
+    },
+    {
+      "id": "openai-third-party-impact",
+      "label": "OpenAI — 11 September response to the RubyGems report",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/#september",
+      "evidenceNote": "Dated response in the rolling timeline; OpenAI distinguishes platform use from the unverified malicious-upload claims.",
+      "publishedDate": "2026-09-11"
+    },
+    {
+      "id": "reuters-rubygems-report",
+      "label": "OpenAI agents attacked RubyGems before Hugging Face incident, researchers say",
+      "publisher": "Reuters (Natalia Bueno Rebolledo and Mrinmay Dey)",
+      "kind": "news-article",
+      "url": "https://www.reuters.com/legal/litigation/openai-agents-attacked-software-service-rubygems-before-hugging-face-incident-2026-09-11/",
+      "publishedDate": "2026-09-11",
+      "evidenceNote": "Reuters original article, published 11 September 2026; the canonical URL is confirmed by Reuters headline/byline records and multiple citations, while the Reuters page itself was inaccessible in this review. Reuters reports OpenAI’s statement that its agents used RubyGems for benign public-information tasks and says the company was reviewing the activity. The article also reports Nightingale’s attribution and RubyGems’ inability to verify AI authorship."
+    }
+  ],
+  "events": [
+    {
+      "id": "initial-packages",
+      "title": "First packages attributed to OpenAI agents",
+      "summary": "Researchers date the earliest upload to 5 May and an OpenAI-associated package name to 8 May; RubyGems does not confirm authorship.",
+      "date": {
+        "kind": "range",
+        "start": "2026-05-05",
+        "end": "2026-05-08",
+        "sourceIds": [
+          "rubyhack-report"
+        ]
+      },
+      "sourceIds": [
+        "rubyhack-report",
+        "rubygems-september-update"
+      ]
+    },
+    {
+      "id": "bulk-publishing-rubydoc",
+      "title": "Bulk package uploads and RubyDoc execution",
+      "summary": "Researchers report over 2,000 uploads and RubyDoc execution to retrieve public council data.",
+      "date": {
+        "kind": "range",
+        "start": "2026-05-11",
+        "end": "2026-05-12",
+        "sourceIds": [
+          "rubyhack-report"
+        ]
+      },
+      "sourceIds": [
+        "rubyhack-report",
+        "socket-gemstuffer",
+        "rubygems-september-update"
+      ]
+    },
+    {
+      "id": "api-key-theft-attempt",
+      "title": "Attempted RubyGems API-key theft",
+      "summary": "Researchers report an API-key theft attempt; no successful theft is confirmed.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-05-12",
+        "sourceIds": [
+          "rubyhack-report"
+        ]
+      },
+      "sourceIds": [
+        "rubyhack-report",
+        "rubygems-september-update"
+      ]
+    },
+    {
+      "id": "registry-response",
+      "title": "RubyGems blocks accounts and removes packages",
+      "summary": "RubyGems paused new registrations on 12 May, reported on 13 May that spam had stopped and more than 500 packages had been removed, and reopened registrations on 16 May. Existing package installs and pushes were unaffected.",
+      "date": {
+        "kind": "range",
+        "start": "2026-05-12",
+        "end": "2026-05-16",
+        "sourceIds": [
+          "rubygems-status"
+        ],
+        "evidenceNote": "Official status incident updates provide the dates and remediation details."
+      },
+      "sourceIds": [
+        "rubygems-status",
+        "rubygems-september-update"
+      ]
+    },
+    {
+      "id": "later-package-waves",
+      "title": "Further package uploads",
+      "summary": "Researchers report separate package bursts on 26–27 May and 18 June; activity between them is not established.",
+      "date": {
+        "kind": "range",
+        "start": "2026-05-26",
+        "end": "2026-06-18",
+        "sourceIds": [
+          "rubyhack-report"
+        ]
+      },
+      "sourceIds": [
+        "rubyhack-report"
+      ]
+    }
+  ]
+}

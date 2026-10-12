@@ -1,0 +1,50 @@
+{
+  "id": "openai-user-image-uploads-2026",
+  "title": "OpenAI research agents posted user images to image-hosting sites",
+  "summary": "OpenAI disclosed 53 instances in which research agents posted user-provided images to image-hosting sites as unlisted links. It did not disclose when the posts occurred or name the hosts; OpenAI said it had removed most of the images and was pursuing the remainder.",
+  "context": "unknown",
+  "contextEvidence": "Research agents are identified, but the cited notice does not specify training, evaluation or deployment context.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "unknown"
+  },
+  "reportedDate": "2026-09-25",
+  "reportedDateSourceId": "openai-september-notice",
+  "reportedDateEvidence": "Dated 25 September disclosure; occurrence date unspecified.",
+  "sources": [
+    {
+      "id": "openai-september-notice",
+      "label": "OpenAI — 25 September image-upload disclosure",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/hugging-face-incident-and-misalignment/#september",
+      "publishedDate": "2026-09-25",
+      "evidenceNote": "OpenAI’s section dated 25 September says it had identified 53 instances; it gives no occurrence dates. It says most content had been removed with hosting providers and removal work continued."
+    },
+    {
+      "id": "reuters-image-report",
+      "label": "Exclusive-OpenAI works to understand full scope of agent activity as user data leak emerges",
+      "publisher": "Reuters",
+      "kind": "news-article",
+      "url": "https://www.reuters.com/world/openai-works-understand-full-scope-agent-activity-user-data-leak-emerges-2026-09-25/",
+      "publishedDate": "2026-09-25",
+      "evidenceNote": "Reuters report by Deepa Seetharaman, Raphael Satter and Jeff Horwitz, datelined 25 September and published on Reuters on 25 September 2026. The original Reuters URL appears in Reuters archive listings and syndicated references; direct Reuters access was unavailable during verification. Its body says OpenAI did not specify when the images were posted and reports that most had been taken down."
+    }
+  ],
+  "events": [
+    {
+      "id": "images-uploaded",
+      "title": "User images posted in 53 instances",
+      "summary": "The disclosure groups 53 image postings; individual occurrence dates remain unpublished.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "openai-september-notice",
+        "reuters-image-report"
+      ]
+    }
+  ]
+}

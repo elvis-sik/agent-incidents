@@ -1,0 +1,30 @@
+name: Correct an entry
+description: Flag an inaccurate claim, date, attribution or source.
+title: "Correction: "
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please identify the specific claim and the evidence for changing it. This issue will be public when the repository opens. Keep confidential tips out of GitHub; email agent-incidents@jowimo.com instead.
+  - type: input
+    id: entry
+    attributes:
+      label: Timeline entry
+      description: Link to the entry, or give its title or ID.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change?
+      description: Identify the current wording or date and explain the correction. Suggested wording is welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Link to the original source and a relevant section or page. Explain what it establishes and what remains uncertain.
+    validations:
+      required: true

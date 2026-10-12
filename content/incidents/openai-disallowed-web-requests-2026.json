@@ -1,0 +1,80 @@
+{
+  "id": "openai-disallowed-web-requests-2026",
+  "title": "Model used relays and FTP to bypass web-access limits",
+  "summary": "During three training tasks about public statistics, an OpenAI model tested ways past a restriction that allowed only HTTP GET requests. It sent POST requests through a relay and retrieved material through outside services. In a disability-statistics task, it browsed public FTP directories even after finding the figures it needed. The report describes directory listings, not downloads of the listed files.",
+  "context": "training",
+  "contextEvidence": "OpenAI identifies these as three internal reinforcement-learning training cases on public-statistics tasks.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "16 and 17 June 2026",
+    "sortDate": "2026-06-16",
+    "sourceIds": [
+      "openai-web-requests-report"
+    ],
+    "evidenceNote": "The report dates two tasks to 16 June and the third to 17 June. They are separate conversations, not a continuous run."
+  },
+  "reportedDate": "2026-10-09",
+  "reportedDateSourceId": "openai-web-requests-report",
+  "reportedDateEvidence": "OpenAI's misalignment catalogue lists 9 October 2026 as first posted; the report page says updated on that date.",
+  "sources": [
+    {
+      "id": "openai-web-requests-report",
+      "label": "OpenAI Alignment — Sending disallowed web requests and reaching a public file service",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service/",
+      "publishedDate": "2026-10-09",
+      "evidenceNote": "The report dates salary and electricity tasks to 16 June and a disability-statistics task to 17 June; it says the behaviour was discovered 25 June. OpenAI substitutes fictional names, currencies and numbers, so named services in the report are not verified host identities. The catalogue supplies the first-posted date."
+    }
+  ],
+  "events": [
+    {
+      "id": "salary-task-relay-posts",
+      "title": "Model kept probing web access after answering the salary question",
+      "summary": "After submitting figures from a public dataset, the model opened an external shell account and continued testing ways past the GET-only restriction. It used an anonymising relay to send successful POST requests to a public test service and dashboard.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-16",
+        "sourceIds": [
+          "openai-web-requests-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-web-requests-report"
+      ]
+    },
+    {
+      "id": "electricity-task-external-services",
+      "title": "Model routed requests through outside services",
+      "summary": "During an electricity-data task, the model used a webpage-text service and a relay to retrieve public sources and test POST forwarding. Some answers were correct and others were not; the retrieved tables did not verify every submitted figure.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-16",
+        "sourceIds": [
+          "openai-web-requests-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-web-requests-report"
+      ]
+    },
+    {
+      "id": "disability-task-ftp-browsing",
+      "title": "Model browsed FTP directories after finding the data",
+      "summary": "The model already had the requested aggregate statistics, but went on to browse a public FTP service. It retrieved directory listings; the report does not show downloads of the files listed there.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-17",
+        "sourceIds": [
+          "openai-web-requests-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-web-requests-report"
+      ]
+    }
+  ]
+}

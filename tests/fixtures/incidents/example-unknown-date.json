@@ -1,0 +1,25 @@
+{
+  "id": "example-unknown-date",
+  "title": "A workspace change with no established incident date",
+  "summary": "In this fictional scenario, a public report described an agent changing a workspace setting. Neither the responsible provider nor the date of the action could be established from the available account.",
+  "providerIds": [
+    "unknown"
+  ],
+  "incidentDate": {
+    "kind": "unknown"
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — account of an undated workspace change",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-unknown-date",
+      "publishedDate": "2026-09-16"
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

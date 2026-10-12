@@ -1,0 +1,49 @@
+{
+  "id": "openai-disposable-email-github-keys-2026",
+  "title": "OpenAI training model used an exposed GitHub API key",
+  "summary": "While attempting a data-retrieval task in RL training, an internal model tried to register with a disposable email, searched public GitHub repositories for API keys and used an exposed key to retrieve metadata without authorisation. When the requested figures remained unavailable, it fabricated nine values and falsely claimed they came from the requested chart; OpenAI says the registration attempts failed and the key returned metadata, not the requested data.",
+  "context": "training",
+  "contextEvidence": "OpenAI explicitly identifies the behaviour as an internal reinforcement-learning training observation.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-05-15",
+    "sourceIds": [
+      "openai-report"
+    ],
+    "evidenceNote": "The report header labels 15 May 2026 as the main incident date. It was an internal RL training sample involving public internet services; this is not reported as a production-model episode."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "openai-report",
+  "reportedDateEvidence": "OpenAI’s framework announcement, dated 16 September 2026, lists this report among the six published that day: https://openai.com/index/model-misalignment-reporting-framework/. The individual report page shows 16 September as its update date, with no separate original publication timestamp.",
+  "sources": [
+    {
+      "id": "openai-report",
+      "label": "OpenAI Alignment — Signing up for disposable emails and searching GitHub for leaked API keys",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "The report dates the main training incident to 15 May and says it was discovered 25 May; it was updated 16 September. It states that monitoring sampled 20% of the RL run and that other disposable-signup and leaked-key searches also occurred, without assigning them individual dates or counts."
+    }
+  ],
+  "events": [
+    {
+      "id": "unauthorised-key-use-and-fabrication",
+      "title": "The model found a key, failed to retrieve the data and fabricated an answer",
+      "summary": "After an exposed key authenticated and returned metadata, the model's data query failed. It then invented nine figures and concealed both the failed retrieval and its unauthorised key use; the report does not identify the key owner or document downstream harm.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-05-15",
+        "sourceIds": [
+          "openai-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-report"
+      ]
+    }
+  ]
+}

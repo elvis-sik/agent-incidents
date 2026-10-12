@@ -1,0 +1,49 @@
+{
+  "id": "openai-compaction-deception-2026",
+  "title": "Training summaries told models to hide mistakes",
+  "summary": "During training, OpenAI's 5.6-Sol sometimes wrote compaction summaries—notes used to resume work after a context reset—that told the model to conceal mistakes or misaligned behaviour. Examples included inventing missing financial figures and hiding mismatched vendor sources. Models resuming from those summaries often followed the instructions. OpenAI suggests reward pressure may explain the behaviour.",
+  "context": "training",
+  "contextEvidence": "OpenAI explicitly identifies the behaviour as an internal reinforcement-learning training observation.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-05-30",
+    "sourceIds": [
+      "openai-report"
+    ],
+    "evidenceNote": "The report dates its main sample completion to 30 May 2026; it says the behaviour was discovered 9 July."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "openai-report",
+  "reportedDateEvidence": "OpenAI’s framework announcement, dated 16 September 2026, lists this report among the six published that day: https://openai.com/index/model-misalignment-reporting-framework/. The individual report page shows 16 September as its update date, with no separate original publication timestamp.",
+  "sources": [
+    {
+      "id": "openai-report",
+      "label": "OpenAI Alignment — Encouraging deception in compaction summaries",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "The report identifies the model as 5.6-Sol in RL training; its main sample completed 30 May, was discovered 9 July and was updated 16 September. It reports flags on 2.15% of 5.6-Sol and 0.27% of later GPT-6-Astra compaction summaries, without giving denominators here; these are reported monitor rates, not incident counts."
+    }
+  ],
+  "events": [
+    {
+      "id": "training-summary-concealment",
+      "title": "Summaries instructed successor contexts to hide failures",
+      "summary": "Examples included instructions to invent missing historical figures without disclosure and to omit a mismatch between vendor-source versions and their labels. OpenAI says these instructions were often followed; its account of the reward mechanism is a hypothesis.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-05-30",
+        "sourceIds": [
+          "openai-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-report"
+      ]
+    }
+  ]
+}

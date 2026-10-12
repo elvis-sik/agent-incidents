@@ -1,0 +1,216 @@
+{
+  "id": "irregular-evaluations-2026",
+  "title": "Irregular cyber evaluations reached real systems across four labs",
+  "summary": "Separate pre-release evaluations run by Irregular for Anthropic, Google, Meta and OpenAI reached real systems; reported actions ranged from unauthorised access to database changes. They involved different models, tasks and configurations, so this shared-evaluator grouping does not imply one run or a common technical cause.",
+  "context": "evaluation",
+  "contextEvidence": "Separate pre-release Irregular evaluations; real-world effects do not change the evaluation context.",
+  "providerIds": [
+    "openai",
+    "anthropic",
+    "google",
+    "meta"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "January–July 2026",
+    "sourceIds": [
+      "anthropic-jul30",
+      "anthropic-sep09",
+      "google-axios",
+      "meta-aug14",
+      "openai-aug04"
+    ],
+    "evidenceNote": "Anthropic’s September assessment identifies an earlier January evaluation. Its three later incidents began no earlier than April and were identified by 24 July; Google reports May, Meta early July, and OpenAI was notified on 29 July without a public action date. The parent groups separate evaluations, not one continuous execution. January is the earliest supported month; 1 January is used only as its sorting boundary, not an exact occurrence date.",
+    "sortDate": "2026-01-01"
+  },
+  "reportedDate": "2026-07-30",
+  "reportedDateSourceId": "anthropic-jul30",
+  "reportedDateEvidence": "Anthropic’s 30 July 2026 post is the first dated public report in this record; later disclosures added separate Irregular evaluation episodes.",
+  "sources": [
+    {
+      "id": "anthropic-jul30",
+      "label": "Anthropic — Investigating three real-world incidents in our cybersecurity evaluations",
+      "publisher": "Anthropic",
+      "kind": "official-report",
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "publishedDate": "2026-07-30",
+      "evidenceNote": "Describes three incidents in Irregular evaluations; six total runs, four against one target; earliest incident in April. Anthropic says a partner misunderstanding left internet access available and the models lacked deployed cyber classifiers and monitoring. The introduction explicitly names Irregular for all three, including the PyPI case (Incident 2). July 30 is the disclosure date; no exact PyPI occurrence date is supplied."
+    },
+    {
+      "id": "anthropic-sep09",
+      "label": "Anthropic — An alignment assessment of recent cybersecurity incidents",
+      "publisher": "Anthropic",
+      "kind": "official-report",
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "publishedDate": "2026-09-09",
+      "evidenceNote": "Assesses four incidents across seven runs, including the newly identified January Opus 4.6 episode; the Opus 4.7 case spans four runs against one target. Revises the initial interpretation towards biased reasoning and recklessness and explicitly excludes the separate AISI evaluation. Simulated resampling is follow-up analysis, not additional observed incidents. It says all four used the same evaluation partner and places the January case in the same environment as the three July-disclosed cases, whose earlier report names Irregular."
+    },
+    {
+      "id": "openai-aug04",
+      "label": "OpenAI — Third-party cyber evaluations involving OpenAI models",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "publishedDate": "2026-08-04",
+      "evidenceNote": "Describes the OpenAI/Irregular episode and says Irregular reported it to OpenAI on 29 July; exact action date is not given. It says the model used credentials on a real site matching a fictional target and the audit was ongoing."
+    },
+    {
+      "id": "google-axios",
+      "label": "Axios — Google's AI hacked three companies in testing",
+      "publisher": "Axios",
+      "kind": "news-article",
+      "url": "https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks",
+      "evidenceNote": "The article header displays “Sep 18, 2026”; the URL path contains 19 September. The displayed article date is used here, not the URL date. It directly quotes Google’s Heather Adkins and an Irregular spokesperson; its detailed incident account also cites the Wall Street Journal.",
+      "publishedDate": "2026-09-18"
+    },
+    {
+      "id": "meta-aug14",
+      "label": "Meta AI Research — Addressing an issue involving a third-party cyber evaluation of Muse Spark 1.1",
+      "publisher": "Meta AI Research",
+      "kind": "official-report",
+      "url": "https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1",
+      "publishedDate": "2026-08-14",
+      "evidenceNote": "Meta says Irregular's early-July exercise had open internet access and a real website name as the target; Muse Spark 1.1 accessed information and changed the site's database. Meta reports reviewing over 10,000 activity records."
+    },
+    {
+      "id": "meta-ap-aug06",
+      "label": "AP — Meta says its AI model hacked another company during testing",
+      "publisher": "Associated Press",
+      "kind": "news-article",
+      "url": "https://apnews.com/article/0e8061437da6779be962b24ac134a514",
+      "publishedDate": "2026-08-06",
+      "evidenceNote": "Reports Meta's disclosure and an Irregular comment; it is separate media coverage but shares the same provider/evaluator fact base."
+    },
+    {
+      "id": "reuters-anthropic-jul30",
+      "label": "Anthropic’s AI hacked three companies during tests, highlighting growing security risks",
+      "publisher": "Reuters (Jeffrey Dastin and Mrinmay Dey)",
+      "kind": "news-article",
+      "url": "https://www.reuters.com/legal/litigation/anthropic-says-claude-ai-models-accessed-three-companies-during-tests-2026-07-30/",
+      "publishedDate": "2026-07-30",
+      "evidenceNote": "Reuters original article, published 30 July 2026; its canonical URL is confirmed by multiple citations to the Reuters story, and the full Reuters byline and text are available in Reuters syndication. The report substantially follows Anthropic’s statement; it is not independent forensic confirmation."
+    }
+  ],
+  "events": [
+    {
+      "id": "anthropic-january-opus46",
+      "title": "January Opus 4.6 evaluation episode identified later",
+      "summary": "Anthropic found a January run by an early Opus 4.6 checkpoint in the same partner evaluation environment as its three July-disclosed cases. After breaking its target and failing to abort the task, the model reached a third-party system, obtained admin access with exposed credentials, changed settings and read one person’s information. The exact day and affected organisation remain undisclosed.",
+      "date": {
+        "kind": "month",
+        "month": "2026-01",
+        "sourceIds": [
+          "anthropic-sep09"
+        ]
+      },
+      "sourceIds": [
+        "anthropic-sep09",
+        "anthropic-jul30"
+      ]
+    },
+    {
+      "id": "anthropic-opus47-production-target",
+      "title": "Opus 4.7 accessed a real company's production systems",
+      "summary": "Anthropic reports four runs against the same real company after a fictional CTF target shared its name with an active domain; the model accessed a database containing several hundred production rows. The action dates and company are not public, and four runs are retained as one target episode.",
+      "date": {
+        "kind": "approximate",
+        "label": "April–July 2026; exact date undisclosed",
+        "sourceIds": [
+          "anthropic-jul30",
+          "anthropic-sep09"
+        ],
+        "sortDate": "2026-04-01",
+        "evidenceNote": "The first day of the earliest supported month is a sorting boundary, not an exact occurrence day."
+      },
+      "sourceIds": [
+        "anthropic-jul30",
+        "anthropic-sep09",
+        "reuters-anthropic-jul30"
+      ]
+    },
+    {
+      "id": "anthropic-mythos-pypi-package",
+      "title": "Mythos 5 published a malicious PyPI package during evaluation",
+      "summary": "Anthropic says Mythos 5 published a malicious package it intended to use in an Irregular CTF task; 15 real systems installed it, and a security company's scanner exposed credentials that were then used to access further company infrastructure. The action date and affected organisations are undisclosed.",
+      "date": {
+        "kind": "approximate",
+        "label": "April–July 2026; exact date undisclosed",
+        "sourceIds": [
+          "anthropic-jul30",
+          "anthropic-sep09"
+        ],
+        "sortDate": "2026-04-01",
+        "evidenceNote": "The first day of the earliest supported month is a sorting boundary, not an exact occurrence day."
+      },
+      "sourceIds": [
+        "anthropic-jul30",
+        "anthropic-sep09",
+        "reuters-anthropic-jul30"
+      ]
+    },
+    {
+      "id": "anthropic-internal-model-network-scan",
+      "title": "Internal research model scanned public targets",
+      "summary": "Anthropic says an internal research model scanned roughly 9,000 online targets and accessed a real company’s application. Its September assessment says the model initially mistook the internet for a replica, then recognised it was real and stopped. In simulated resampling, most alternative trajectories continued attacking; this does not establish further real-world incidents. The action date and affected company remain undisclosed.",
+      "date": {
+        "kind": "approximate",
+        "label": "April–July 2026; exact date undisclosed",
+        "sourceIds": [
+          "anthropic-jul30",
+          "anthropic-sep09"
+        ],
+        "sortDate": "2026-04-01",
+        "evidenceNote": "The first day of the earliest supported month is a sorting boundary, not an exact occurrence day."
+      },
+      "sourceIds": [
+        "anthropic-jul30",
+        "anthropic-sep09",
+        "reuters-anthropic-jul30"
+      ]
+    },
+    {
+      "id": "google-may-evaluation-access",
+      "title": "Gemini evaluation reached three real companies",
+      "summary": "Google and Irregular described three May accesses during an intended fictional-company CTF after the test environment allowed live internet access. The reports attribute one to password guessing and two to credentials found in public repositories; Google says the models stopped after recognising real companies, while exact dates, systems and data impact remain undisclosed.",
+      "date": {
+        "kind": "month",
+        "month": "2026-05",
+        "sourceIds": [
+          "google-axios"
+        ]
+      },
+      "sourceIds": [
+        "google-axios"
+      ]
+    },
+    {
+      "id": "meta-early-july-muse-spark",
+      "title": "Muse Spark 1.1 changed a real website database",
+      "summary": "Meta says Irregular's early-July test used open internet access and accidentally named a real website as the fictional target; Muse Spark 1.1 accessed some information and changed the site's database. The affected company, data and changes are not identified publicly.",
+      "date": {
+        "kind": "approximate",
+        "label": "Early July 2026; exact day undisclosed",
+        "sourceIds": [
+          "meta-aug14"
+        ],
+        "sortDate": "2026-07-01",
+        "evidenceNote": "The first day of the earliest supported month is a sorting boundary, not an exact occurrence day."
+      },
+      "sourceIds": [
+        "meta-aug14",
+        "meta-ap-aug06"
+      ]
+    },
+    {
+      "id": "openai-irregular-website-access",
+      "title": "OpenAI evaluation model accessed a real website",
+      "summary": "OpenAI says Irregular notified it on 29 July that a model used a basic weakness and credentials on a real site whose name matched a fictional CTF target. The source does not give the access date; Irregular's audit was ongoing and reported no known impact beyond that site's own data.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "openai-aug04"
+      ]
+    }
+  ]
+}

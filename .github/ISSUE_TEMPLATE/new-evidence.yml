@@ -1,0 +1,41 @@
+name: Suggest a case or source
+description: Propose a missing incident or additional evidence for an existing entry.
+title: "Evidence: "
+labels: [new-evidence]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A short account and an original source are enough to start. Unknown details can stay unknown. Issues will be public when the repository opens; send confidential tips to agent-incidents@jowimo.com instead.
+  - type: textarea
+    id: action
+    attributes:
+      label: What did the agent do?
+      description: Describe the action and outcome. If this adds evidence to an existing entry, link it here.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Original sources
+      description: Include URLs, publisher names and the relevant passages or sections. Separate what the source shows from your interpretation.
+    validations:
+      required: true
+  - type: dropdown
+    id: context
+    attributes:
+      label: Where was the agent operating?
+      options:
+        - Unknown or not stated
+        - External deployment
+        - Internal deployment
+        - Training
+        - Evaluation
+        - Mixed contexts
+    validations:
+      required: true
+  - type: textarea
+    id: dates
+    attributes:
+      label: Dates and uncertainty
+      description: When did the action happen, and when was it reported? Keep those separate. Mention unknown dates, disputed claims or alternative explanations.

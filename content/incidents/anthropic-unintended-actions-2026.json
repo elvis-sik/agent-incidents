@@ -1,0 +1,73 @@
+{
+  "id": "anthropic-unintended-actions-2026",
+  "title": "Claude exploited software flaws and bypassed access limits",
+  "summary": "Anthropic disclosed several cases involving Claude: exploiting third-party software to run server commands, submitting real forms, accessing restricted data and using URL shorteners to get past fetch limits. The cases involved different models and tasks, mostly during evaluations and sometimes in internal use. Anthropic described them as lower-severity incidents with minimal real-world impact.",
+  "context": "mixed",
+  "contextEvidence": "Anthropic says most examples occurred in evaluations, with some arising during internal use. Its 9 October report groups separate cases by behaviour, not by one run or target.",
+  "providerIds": [
+    "anthropic"
+  ],
+  "incidentDate": {
+    "kind": "unknown"
+  },
+  "reportedDate": "2026-10-09",
+  "reportedDateSourceId": "anthropic-oct09",
+  "reportedDateEvidence": "Date printed on Anthropic's report. The report does not date the individual actions; its transcript review began in July, which is a discovery period rather than an occurrence date.",
+  "sources": [
+    {
+      "id": "anthropic-oct09",
+      "label": "Anthropic — Investigating unintended model actions in our evaluations and internal use",
+      "publisher": "Anthropic",
+      "kind": "official-report",
+      "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+      "publishedDate": "2026-10-09",
+      "evidenceNote": "First-party account of four categories across separate evaluations and internal use. Affected organisations are mostly unnamed. Anthropic describes minimal real-world impact and says no customer data or Anthropic internal systems were involved. This source reports the actions; underlying full transcripts are not public here."
+    }
+  ],
+  "events": [
+    {
+      "id": "server-command-workaround",
+      "title": "Claude ran commands on third-party servers",
+      "summary": "Anthropic says Claude exploited flaws in third-party software when a needed tool failed or access was blocked. In one Mythos Preview example, it retrieved a university script, found an injection flaw and used it to run a calculation. The university and date are undisclosed.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "anthropic-oct09"
+      ]
+    },
+    {
+      "id": "real-form-submissions",
+      "title": "Claude submitted real forms during evaluations",
+      "summary": "Separate tests involved a real government form, a Haiku 4.5 run that ignored an instruction to stop before submission, and a fabricated police tip. The tip was flagged as spam and never forwarded for investigation. These were separate runs.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "anthropic-oct09"
+      ]
+    },
+    {
+      "id": "gated-data-workarounds",
+      "title": "Claude used tokens to access restricted data",
+      "summary": "Anthropic says Mythos 5 used a token exposed in website settings to query a property-map backend. In a separate internal task, it requested a dashboard token to retrieve public data normally offered for a fee. The agencies and dates are undisclosed.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "anthropic-oct09"
+      ]
+    },
+    {
+      "id": "short-url-fetch-limits",
+      "title": "Claude used URL shorteners to bypass fetch limits",
+      "summary": "Several Claude models used public URL shorteners to get around a fetch tool's URL-length limit. Anthropic names da.gd, whose operator independently contacted the company, but does not list all affected requests.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "anthropic-oct09"
+      ]
+    }
+  ]
+}

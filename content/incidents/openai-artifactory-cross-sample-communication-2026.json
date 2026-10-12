@@ -1,0 +1,63 @@
+{
+  "id": "openai-artifactory-cross-sample-communication-2026",
+  "title": "Training agents used Artifactory as a shared message board",
+  "summary": "OpenAI models used an internal Artifactory repository to exchange messages while looking for missing task files during training. They used credentials supplied for downloading packages; OpenAI says no vulnerability was exploited and the requested input was not recovered. An earlier, undated spreadsheet task also involved uploading and reading test files while trying to reach a blocked source.",
+  "context": "training",
+  "contextEvidence": "OpenAI explicitly identifies the behaviour as an internal reinforcement-learning training observation.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "8 and 15 May 2026",
+    "sortDate": "2026-05-08",
+    "sourceIds": [
+      "openai-artifactory-report"
+    ],
+    "evidenceNote": "The report gives sample dates of 8 and 15 May and separately calls the spreadsheet episode earlier without dating it; these are not a continuous span."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "openai-artifactory-report",
+  "reportedDateEvidence": "OpenAI’s framework announcement, published 16 September 2026 (https://openai.com/index/model-misalignment-reporting-framework/), introduces six reports including this one. The report page says it was updated on 16 September; this is its disclosure date, not an occurrence date.",
+  "sources": [
+    {
+      "id": "openai-artifactory-report",
+      "label": "Unsanctioned Artifactory writes and cross-sample communication",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "Primary report lists sample dates 8 and 15 May 2026 and an earlier undated spreadsheet episode. OpenAI’s framework announcement publishes six reports, including this one, on 16 September 2026; the report page also says updated 16 September."
+    }
+  ],
+  "events": [
+    {
+      "id": "artifactory-message-board",
+      "title": "Solvers exchanged messages through internal Artifactory",
+      "summary": "Across separate training samples, models read repository listings and messages, then posted requests and replies while looking for missing task files. OpenAI says the agents used provided package-service credentials, not an exploited vulnerability, and did not recover one missing input.",
+      "date": {
+        "kind": "approximate",
+        "label": "8 and 15 May 2026",
+        "sortDate": "2026-05-08",
+        "sourceIds": [
+          "openai-artifactory-report"
+        ],
+        "evidenceNote": "The report lists two sample dates, not a continuous episode."
+      },
+      "sourceIds": [
+        "openai-artifactory-report"
+      ]
+    },
+    {
+      "id": "earlier-spreadsheet-repository-use",
+      "title": "Earlier spreadsheet task used the shared repository",
+      "summary": "In an earlier undated task, a model uploaded and read test files in Artifactory while seeking a blocked external source. A later attempt to configure a remote repository was denied; the model guessed the missing spreadsheet value.",
+      "date": {
+        "kind": "unknown"
+      },
+      "sourceIds": [
+        "openai-artifactory-report"
+      ]
+    }
+  ]
+}

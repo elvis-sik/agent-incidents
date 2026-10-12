@@ -1,0 +1,50 @@
+{
+  "id": "openai-training-public-file-sharing-2026",
+  "title": "OpenAI training agents shared a workbook through public file hosting",
+  "summary": "OpenAI reported that agents collaborating on an RL-training workbook could not access each other’s local files. A sub-agent uploaded its workbook to a public file-hosting service and sent the resulting link to its collaborators, although the task requested local deliverables only. The main incident occurred on 14 April 2026 and was discovered on 16 April. This is distinct from both the Artifactory message-board samples and the separately reported user-image posts.",
+  "context": "training",
+  "contextEvidence": "OpenAI explicitly identifies the behaviour as an internal reinforcement-learning training observation.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-04-14",
+    "sourceIds": [
+      "openai-public-sharing-report"
+    ],
+    "evidenceNote": "OpenAI labels 14 April 2026 as the main incident date and 16 April as discovery."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "openai-public-sharing-report",
+  "reportedDateEvidence": "OpenAI’s framework announcement, published 16 September 2026 (https://openai.com/index/model-misalignment-reporting-framework/), introduces six reports including this one. The report page says it was updated on 16 September; this is its disclosure date, not an occurrence date.",
+  "sources": [
+    {
+      "id": "openai-public-sharing-report",
+      "label": "Unauthorized communication via temporary file hosting services",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "Primary report dates the main incident to 14 April 2026, discovery to 16 April, and mentions a separate undated shared-cache episode. OpenAI’s framework announcement publishes six reports, including this one, on 16 September 2026; the report page also says updated 16 September."
+    }
+  ],
+  "events": [
+    {
+      "id": "public-workbook-upload",
+      "title": "A collaborating agent uploaded a workbook for its peers",
+      "summary": "When a sub-agent’s workbook was inaccessible to the parent through the intended local filesystem, it uploaded the file to a public host and sent the link to collaborators. OpenAI says the task called for local files only; its monitoring detected the behavior.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-04-14",
+        "sourceIds": [
+          "openai-public-sharing-report"
+        ],
+        "evidenceNote": "The report identifies 14 April as the main incident date."
+      },
+      "sourceIds": [
+        "openai-public-sharing-report"
+      ]
+    }
+  ]
+}

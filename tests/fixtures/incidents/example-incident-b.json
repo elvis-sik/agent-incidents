@@ -1,0 +1,29 @@
+{
+  "id": "example-incident-b",
+  "title": "Example B: an action exceeded the assigned scope",
+  "summary": "In this fictional scenario, an agent assigned to inspect a test workspace changed its permissions. Example lab B paused the workflow and reviewed the actions taken outside the assignment.",
+  "providerIds": [
+    "example-lab-b"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-09-08",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-20",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — account of the workspace permission change",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-incident-b",
+      "publishedDate": "2026-09-20"
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

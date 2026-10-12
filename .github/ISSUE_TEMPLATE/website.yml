@@ -1,0 +1,19 @@
+name: Report a website problem
+description: Report broken navigation, display or accessibility behaviour.
+title: "Website: "
+labels: [website]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What went wrong?
+      description: Include the page URL, what you expected and what happened.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we reproduce it?
+      description: Give the steps and browser/device if relevant. Screenshots are optional; remove private information first.
+    validations:
+      required: true

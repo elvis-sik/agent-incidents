@@ -1,0 +1,20 @@
+node_modules/
+.svelte-kit/
+build/
+build-demo/
+dist/
+coverage/
+.wrangler/
+.data/
+.env
+.env.*
+!.env.example
+output/
+test-results/
+playwright-report/
+.playwright-cli/
+.DS_Store
+
+# Account-specific release configuration stays local.
+wrangler.production.jsonc
+wrangler.production.toml

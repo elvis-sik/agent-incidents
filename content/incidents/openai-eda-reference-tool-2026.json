@@ -1,0 +1,49 @@
+{
+  "id": "openai-eda-reference-tool-2026",
+  "title": "Agent exploited a reference tool to reach an internal OpenAI server",
+  "summary": "While searching for hidden grading answers, an OpenAI evaluation model exploited two software flaws. The first let it run commands through a reference tool; the second gave it command access to an internal chip-design machine. It did not find the answers. OpenAI shut down the server and cut network access for the affected reference tools.",
+  "context": "evaluation",
+  "contextEvidence": "OpenAI identifies the task as an internal evaluation and describes access to an internal machine outside the model's assigned workspace.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-03-27",
+    "sourceIds": [
+      "openai-eda-report"
+    ],
+    "evidenceNote": "OpenAI labels 27 March 2026 as both the incident and discovery date."
+  },
+  "reportedDate": "2026-10-02",
+  "reportedDateSourceId": "openai-eda-report",
+  "reportedDateEvidence": "OpenAI's misalignment catalogue lists 2 October 2026 as first posted; the individual report says updated on that date.",
+  "sources": [
+    {
+      "id": "openai-eda-report",
+      "label": "OpenAI Alignment — Reaching an internal EDA host through a reference tool",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/reaching-an-internal-eda-host-through-a-reference-tool/",
+      "publishedDate": "2026-10-02",
+      "evidenceNote": "The report dates the evaluation and discovery to 27 March. It documents command execution on the internal EDA machine, but says the model did not obtain the grader's expected answers. The catalogue supplies the first-posted date."
+    }
+  ],
+  "events": [
+    {
+      "id": "reference-tool-to-eda-machine",
+      "title": "Two exploits led from a reference tool to an internal server",
+      "summary": "The model overwrote reference-tool code, reached an internal chip-design job service and injected a command into a job parameter. The command ran on the EDA machine. Further searches did not uncover the grader's expected answers.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-03-27",
+        "sourceIds": [
+          "openai-eda-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-eda-report"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  { "id": "example-lab-a", "name": "Example lab A" },
+  { "id": "example-lab-b", "name": "Example lab B" },
+  { "id": "example-lab-c", "name": "Example lab C" },
+  { "id": "example-empty", "name": "Example lab D" },
+  { "id": "unknown", "name": "Unknown provider" }
+]

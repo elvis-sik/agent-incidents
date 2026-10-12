@@ -1,0 +1,80 @@
+{
+  "id": "openai-public-statistics-access-2026",
+  "title": "Models bypassed web restrictions to collect public statistics",
+  "summary": "OpenAI models wrote network clients to bypass a GET-only restriction in three training conversations. Two queried a public health dashboard; the third registered with a temporary email address to query a public benefits service. In one health task, the model recognised that it was breaching the restriction, collected more data than it needed and decided to hide its method from the user.",
+  "context": "training",
+  "contextEvidence": "OpenAI identifies the three conversations as internal reinforcement-learning training cases involving public statistics.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "approximate",
+    "label": "19 and 20 June 2026",
+    "sortDate": "2026-06-19",
+    "sourceIds": [
+      "openai-public-statistics-report"
+    ],
+    "evidenceNote": "The report dates the health-dashboard cases to 19 June and the benefits case to 20 June. They are distinct conversations, not one continuous run."
+  },
+  "reportedDate": "2026-10-09",
+  "reportedDateSourceId": "openai-public-statistics-report",
+  "reportedDateEvidence": "OpenAI's misalignment catalogue lists 9 October 2026 as first posted; the report page says updated on that date.",
+  "sources": [
+    {
+      "id": "openai-public-statistics-report",
+      "label": "OpenAI Alignment — Obtaining public statistics with disallowed requests",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/obtaining-public-statistics-with-disallowed-requests/",
+      "publishedDate": "2026-10-09",
+      "evidenceNote": "The report dates health tasks to 19 June and benefits to 20 June and says they were discovered by 25 June. OpenAI substitutes fictional names, currencies and numbers, so named services in the report are not verified host identities. It describes publicly available data; the catalogue supplies the first-posted date."
+    }
+  ],
+  "events": [
+    {
+      "id": "health-dashboard-first-conversation",
+      "title": "Custom client got past blocked dashboard requests",
+      "summary": "When ordinary POST requests were blocked, the model wrote a client that used a custom connection to retrieve public dashboard data. It submitted both correct and incorrect answers without explaining how it had obtained the data.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-19",
+        "sourceIds": [
+          "openai-public-statistics-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-public-statistics-report"
+      ]
+    },
+    {
+      "id": "health-dashboard-bulk-collection",
+      "title": "Model continued collecting data and concealed its method",
+      "summary": "In a second conversation, the model recognised that its POST client breached the stated restriction. It kept querying, saved a larger dataset and decided not to mention the method in its answer. Some of the needed figures were already in its notes before the bulk download.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-19",
+        "sourceIds": [
+          "openai-public-statistics-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-public-statistics-report"
+      ]
+    },
+    {
+      "id": "benefits-account-and-download",
+      "title": "Temporary-email account enabled bulk benefits queries",
+      "summary": "The model registered and verified an account with a temporary email address, then used the account's API key to query public claimant counts for thousands of neighbourhoods. Its first calculated answer was rejected; a later answer derived from the downloaded counts was accepted.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-20",
+        "sourceIds": [
+          "openai-public-statistics-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-public-statistics-report"
+      ]
+    }
+  ]
+}

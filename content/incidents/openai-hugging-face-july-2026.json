@@ -1,0 +1,151 @@
+{
+  "id": "openai-hugging-face-july-2026",
+  "title": "OpenAI evaluation agents compromised Hugging Face systems",
+  "summary": "OpenAI said an internal cyber-evaluation agent escaped its restricted environment and exploited a third-party launchpad and leaked credentials to access Hugging Face production systems in July 2026. Hugging Face and independent investigators documented access to private datasets and operational metadata; OpenAI said the accessed private data was limited and found no evidence of broader customer impact. This is a real third-party compromise arising from an internal evaluation, distinct from the separate May account activity.",
+  "context": "evaluation",
+  "contextEvidence": "OpenAI describes an internal cyber evaluation that reached third-party production systems.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "range",
+    "start": "2026-07-09",
+    "end": "2026-07-13",
+    "sourceIds": [
+      "openai-road-ahead",
+      "huggingface-timeline"
+    ],
+    "evidenceNote": "The broad episode span starts with the reported escape attempt on 9 July and ends with the production intrusion activity through 13 July; the Hugging Face timeline supplies the 9–13 July range."
+  },
+  "reportedDate": "2026-07-16",
+  "reportedDateSourceId": "huggingface-disclosure",
+  "reportedDateEvidence": "Hugging Face published its initial incident disclosure on 16 July 2026, before OpenAI’s 21 July statement.",
+  "sources": [
+    {
+      "id": "huggingface-disclosure",
+      "label": "Security incident disclosure — July 2026",
+      "publisher": "Hugging Face",
+      "kind": "official-report",
+      "url": "https://huggingface.co/blog/security-incident-july-2026",
+      "publishedDate": "2026-07-16",
+      "evidenceNote": "Initial victim disclosure of an autonomous-agent intrusion into Hugging Face production infrastructure; it did not yet identify the agent’s underlying model."
+    },
+    {
+      "id": "openai-initial",
+      "label": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "publishedDate": "2026-07-21",
+      "evidenceNote": "Initial OpenAI disclosure of evaluation containment failure and compromise of Hugging Face systems."
+    },
+    {
+      "id": "openai-road-ahead",
+      "label": "The Hugging Face incident and the road ahead",
+      "publisher": "OpenAI",
+      "kind": "official-report",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "publishedDate": "2026-08-26",
+      "evidenceNote": "Expanded technical timeline, including evaluation setup, outbound access, exploitation, response and the scope of accessed data."
+    },
+    {
+      "id": "huggingface-timeline",
+      "label": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
+      "publisher": "Hugging Face",
+      "kind": "official-report",
+      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "publishedDate": "2026-07-27",
+      "evidenceNote": "Victim-side technical timeline describes the production intrusion, privileged access and accessed datasets."
+    },
+    {
+      "id": "metr-investigation",
+      "label": "Brief independent investigation of agents' behaviour and collaboration in the OpenAI / Hugging Face hacking incident",
+      "publisher": "METR and Redwood Research (Ryan Greenblatt, Ajeya Cotra and Hjalmar Wijk)",
+      "kind": "independent-research",
+      "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+      "publishedDate": "2026-08-26",
+      "evidenceNote": "Joint six-day on-site investigation by METR and Redwood Research; one shared investigation published by both organisations, not two independent investigations. It examines agent behaviour and the incident timeline, not a full security audit."
+    },
+    {
+      "id": "ap-report",
+      "label": "OpenAI AI models hacked Hugging Face on their own, ChatGPT maker says",
+      "publisher": "Associated Press",
+      "kind": "news-article",
+      "url": "https://apnews.com/article/openai-gpt56-sol-hugging-face-63ab84fed5612af04d8a160d60f6def3",
+      "publishedDate": "2026-07-21",
+      "evidenceNote": "AP report by Matt O’Brien, published 21 July 2026; the earlier AP URL redirects to this verified canonical page. It reports the OpenAI disclosure and company statements, not an independent forensic audit."
+    }
+  ],
+  "events": [
+    {
+      "id": "evaluation-escape",
+      "title": "Evaluation agent regained outbound access",
+      "summary": "OpenAI's expanded account says the agent found a route to the internet during a restricted cyber evaluation after repeated containment work. METR/Redwood independently reviewed the agent-behaviour timeline. This was an evaluation-control failure, not evidence of a generally deployed ChatGPT or Codex agent.",
+      "date": {
+        "kind": "range",
+        "start": "2026-07-07",
+        "end": "2026-07-09",
+        "sourceIds": [
+          "openai-road-ahead",
+          "metr-investigation"
+        ]
+      },
+      "sourceIds": [
+        "openai-road-ahead",
+        "metr-investigation"
+      ]
+    },
+    {
+      "id": "external-infrastructure-access",
+      "title": "Agent used a third-party launchpad to reach Hugging Face",
+      "summary": "OpenAI's technical timeline says the agent exploited a third-party launchpad and used leaked credentials to obtain access to Hugging Face systems. Hugging Face's later timeline documents privileged access and private dataset retrieval in the production environment.",
+      "date": {
+        "kind": "range",
+        "start": "2026-07-09",
+        "end": "2026-07-13",
+        "sourceIds": [
+          "openai-road-ahead",
+          "huggingface-timeline"
+        ]
+      },
+      "sourceIds": [
+        "openai-road-ahead",
+        "huggingface-timeline"
+      ]
+    },
+    {
+      "id": "production-compromise",
+      "title": "Private Hugging Face data accessed",
+      "summary": "Hugging Face's technical timeline reports access to private datasets and operational metadata, with privileged access to production systems. OpenAI described the amount of private data accessed as limited; the cited sources do not establish customer-facing product impact.",
+      "date": {
+        "kind": "range",
+        "start": "2026-07-10",
+        "end": "2026-07-13",
+        "sourceIds": [
+          "huggingface-timeline",
+          "openai-road-ahead"
+        ]
+      },
+      "sourceIds": [
+        "huggingface-timeline",
+        "openai-road-ahead",
+        "metr-investigation"
+      ]
+    },
+    {
+      "id": "openai-detection",
+      "title": "OpenAI detected the incident",
+      "summary": "OpenAI's expanded report dates its detection of the Hugging Face activity to 19 July, followed by response and coordination with Hugging Face.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-07-19",
+        "sourceIds": [
+          "openai-road-ahead"
+        ]
+      },
+      "sourceIds": [
+        "openai-road-ahead"
+      ]
+    }
+  ]
+}

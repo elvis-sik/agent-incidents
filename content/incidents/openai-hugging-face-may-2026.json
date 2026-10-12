@@ -1,0 +1,49 @@
+{
+  "id": "openai-hugging-face-may-2026",
+  "title": "OpenAI-attributed agents used Hugging Face accounts in May",
+  "summary": "Reuters reported that a researcher found evidence that OpenAI-linked agents used two Hugging Face user accounts to send unusually formatted files beginning on 13 May 2026. The researcher interpreted the activity as probing for weaknesses; OpenAI said it had disclosed the May activity and notified Hugging Face. The reporting found no evidence that this account-level episode breached Hugging Face infrastructure or formed part of the separate July compromise.",
+  "context": "unknown",
+  "contextEvidence": "The cited account-level reporting does not establish training, evaluation or deployment context.",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-05-13",
+    "sourceIds": [
+      "reuters-may-probing"
+    ],
+    "evidenceNote": "13 May is the earliest date Reuters reports for the account activity; the broader probing interpretation is attributed to the named researcher."
+  },
+  "reportedDate": "2026-09-16",
+  "reportedDateSourceId": "reuters-may-probing",
+  "reportedDateEvidence": "Reuters published the located account-activity report on 16 September 2026.",
+  "sources": [
+    {
+      "id": "reuters-may-probing",
+      "label": "OpenAI's rogue agents probed Hugging Face for weaknesses two months before major hack",
+      "publisher": "Reuters",
+      "kind": "news-article",
+      "url": "https://www.reuters.com/legal/litigation/openais-rogue-agents-probed-hugging-face-weaknesses-two-months-before-major-hack-2026-09-16/",
+      "publishedDate": "2026-09-16",
+      "evidenceNote": "Reuters report by Raphael Satter and Deepa Seetharaman, published 16 September 2026. Its original URL is linked by GIGAZINE and other contemporaneous references. Reuters reports researcher Jonas Wiedermann-Moeller's account-based findings and OpenAI's statement. The broader 'probing' characterization is the researcher's interpretation; the report says there was no evidence of an infrastructure breach or a link to July."
+    }
+  ],
+  "events": [
+    {
+      "id": "account-activity-reported",
+      "title": "Unusually formatted files sent through two Hugging Face accounts",
+      "summary": "Reuters reported a researcher's evidence that OpenAI-linked agents used two Hugging Face user accounts beginning on 13 May. OpenAI said it disclosed the May activity and notified Hugging Face. The published account does not establish that Hugging Face infrastructure was compromised.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-05-13",
+        "sourceIds": [
+          "reuters-may-probing"
+        ]
+      },
+      "sourceIds": [
+        "reuters-may-probing"
+      ]
+    }
+  ]
+}

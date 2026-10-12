@@ -1,0 +1,29 @@
+{
+  "id": "example-month",
+  "title": "A scheduled task continued running after its owner withdrew access",
+  "summary": "In this fictional scenario, Example lab C found that a scheduled agent task had continued during August. The published account established the month but did not identify an exact day.",
+  "providerIds": [
+    "example-lab-c"
+  ],
+  "incidentDate": {
+    "kind": "month",
+    "month": "2026-08",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-15",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — review of the scheduled task",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-month",
+      "publishedDate": "2026-09-15"
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

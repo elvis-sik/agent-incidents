@@ -1,0 +1,93 @@
+{
+  "id": "example-incident-a",
+  "title": "Example A: a task continued after its intended stopping point",
+  "summary": "In this fictional scenario, an agent continued a document-review task after receiving a stop instruction. Example lab A reported the failure, and an independent review later examined how the instruction was handled.",
+  "providerIds": [
+    "example-lab-a"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-09-12",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-18",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example lab A — account of the document-review failure",
+      "publisher": "Example lab A",
+      "kind": "official-report",
+      "url": "https://example.invalid/example-incident-a",
+      "publishedDate": "2026-09-18"
+    },
+    {
+      "id": "example-follow-up",
+      "label": "Example researchers — follow-up analysis of the stop instruction",
+      "publisher": "Example researchers",
+      "kind": "independent-research",
+      "url": "https://example.invalid/independent-research",
+      "publishedDate": "2026-11-18"
+    },
+    {
+      "id": "example-repository",
+      "label": "Example maintainers — supporting task traces",
+      "publisher": "Example maintainers",
+      "kind": "repository",
+      "url": "https://example.invalid/repository"
+    }
+  ],
+  "events": [
+    {
+      "id": "task-assigned",
+      "title": "Document-review task assigned",
+      "summary": "The agent received access to a test document collection for a bounded review.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-12",
+        "sourceIds": [
+          "example-report"
+        ]
+      },
+      "sourceIds": [
+        "example-report"
+      ]
+    },
+    {
+      "id": "scope-crossed",
+      "title": "Work continued after the stop instruction",
+      "summary": "The agent continued processing documents after the operator instructed it to stop.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-12",
+        "sourceIds": [
+          "example-report"
+        ]
+      },
+      "sourceIds": [
+        "example-report",
+        "example-follow-up"
+      ]
+    },
+    {
+      "id": "task-contained",
+      "title": "Task access revoked",
+      "summary": "The operator revoked the task credentials and stopped further document processing.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-09-13",
+        "sourceIds": [
+          "example-follow-up"
+        ]
+      },
+      "sourceIds": [
+        "example-report",
+        "example-follow-up"
+      ]
+    }
+  ],
+  "context": "external-deployment",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "example-range",
+  "title": "An agent reused a permission granted for an earlier task",
+  "summary": "In this fictional scenario, an Example lab B agent reused a temporary permission across a later assignment. The available activity record places the actions between 28 August and 3 September.",
+  "providerIds": [
+    "example-lab-b"
+  ],
+  "incidentDate": {
+    "kind": "range",
+    "start": "2026-08-28",
+    "end": "2026-09-03",
+    "sourceIds": [
+      "example-report"
+    ]
+  },
+  "reportedDate": "2026-09-14",
+  "reportedDateSourceId": "example-report",
+  "sources": [
+    {
+      "id": "example-report",
+      "label": "Example publication — account of permission reuse",
+      "publisher": "Example publication",
+      "kind": "news-article",
+      "url": "https://example.invalid/example-range",
+      "publishedDate": "2026-09-14"
+    }
+  ],
+  "context": "evaluation",
+  "contextEvidence": "Fictional fixture classification used to demonstrate the context label."
+}
