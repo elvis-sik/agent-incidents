@@ -18,3 +18,4 @@ playwright-report/
 # Account-specific release configuration stays local.
 wrangler.production.jsonc
 wrangler.production.toml
+wrangler.redirect.production.jsonc

@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        A short account and an original source are enough to start. Unknown details can stay unknown. Issues will be public when the repository opens; send confidential tips to agent-incidents@jowimo.com instead.
+        A short account and an original source are enough to start. Unknown details can stay unknown. Issues are public; send confidential tips to agent-incidents@jowimo.com instead.
   - type: textarea
     id: action
     attributes:

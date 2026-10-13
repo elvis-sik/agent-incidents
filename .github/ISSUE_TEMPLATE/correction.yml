@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please identify the specific claim and the evidence for changing it. This issue will be public when the repository opens. Keep confidential tips out of GitHub; email agent-incidents@jowimo.com instead.
+        Please identify the specific claim and the evidence for changing it. This issue is public. Keep confidential tips out of GitHub; email agent-incidents@jowimo.com instead.
   - type: input
     id: entry
     attributes:

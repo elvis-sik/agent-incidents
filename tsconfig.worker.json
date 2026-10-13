@@ -18,6 +18,7 @@
   },
   "include": [
     "worker-configuration.d.ts",
-    "workers/site.ts"
+    "workers/site.ts",
+    "workers/redirect.ts"
   ]
 }

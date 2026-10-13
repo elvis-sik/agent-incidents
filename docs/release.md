@@ -1,22 +1,43 @@
-# Release boundary
+# Release operations
 
-## Current state
+## Public website and private research
 
-This repository was prepared as a clean website snapshot on 12 October 2026. It remains private for review. It has no inherited research Git history, raw captures, host/URL catalogue, research database exports or private-review tools. Its content is the reviewed timeline plus labelled fictional test fixtures.
+This repository contains the website, reviewed timeline and labelled test fixtures. It started with a clean snapshot on 12 October 2026, without research Git history. Research records, raw captures and review tools remain in a separate private repository and are not build inputs.
 
-The existing subdomain release is unchanged. Creating or pushing this repository does not deploy it, activate the standalone domain, or configure a redirect.
+Code is MIT; original text and timeline data are CC BY 4.0. GitHub issues are public. The issue forms accept corrections, new sources and website problems; email remains available for private tips.
 
-## Before opening the repository
+## Production targets
 
-Review the complete tracked file list and Git history, issue forms and contribution instructions. Confirm that the code/content licence split is clear and that CI passes without private data or credentials. Making the repository public is an explicit maintainer action.
+| Worker | Hostnames | Behaviour |
+| --- | --- | --- |
+| `agent-incidents-website` | `agent-incidents.com` | Static website and genuine 404 responses |
+| `agent-incidents` | `agent-incidents.jowimo.com`, `www.agent-incidents.com` | HTTP 308 redirect to `https://agent-incidents.com` |
 
-The two editorial issue forms collect corrections and proposed evidence. A third collects website bugs. Their submissions remain proposals until reviewed and merged. Private tips stay outside public issues and build artefacts.
+The redirect preserves paths and query strings. Browsers retain fragment identifiers, including timeline anchors. Unknown redirect hostnames return 404. An old path without a corresponding published page remains a 404 on the new domain.
 
-## Before deploying
+The main `jowimo.com` website links directly to the canonical domain; its source and deployment are maintained separately.
 
-Build and review the real collection locally. Supply a separate, ignored production Wrangler configuration with the intended account, Worker name and domain routes. Verify those targets before an authorised manual deployment. CI must remain check-only unless a deployment workflow is deliberately approved.
+## Deploy
 
-Verify the standalone domain before switching the old subdomain to a redirect. Decide how old deep links should resolve; the first release has only `/`, `/about/`, `/roadmap/` and `/submit/`, plus sitemap and robots metadata.
+CI validates changes but does not deploy. Use Node 24 and the repository's npm lockfile. Account-specific configurations stay in the ignored files `wrangler.production.jsonc` and `wrangler.redirect.production.jsonc`.
+
+- Website configuration: copy `wrangler.jsonc`, set the deployment account and add `routes: [{ "pattern": "agent-incidents.com", "custom_domain": true }]`.
+- Redirect configuration: use `workers/redirect.ts`, Worker name `agent-incidents`, the same account, and the two redirect hostnames as custom domains. Set `workers_dev` and `preview_urls` to false. Do not include static assets or database bindings.
+
+Before deployment, verify the branch, diff, account with `npx wrangler whoami`, and both configurations. Run type checks, worker checks, unit tests, production build and browser tests. Build and browser tests must run sequentially.
+
+```sh
+npm run build
+npx wrangler deploy --config wrangler.production.jsonc --dry-run
+npx wrangler deploy --config wrangler.redirect.production.jsonc --dry-run
+npx wrangler deploy --config wrangler.production.jsonc
+# Verify the new HTTPS site before changing the old entry point.
+npx wrangler deploy --config wrangler.redirect.production.jsonc
+```
+
+Verify `/`, `/about/`, `/roadmap/`, `/submit/`, sitemap, canonical metadata and genuine 404s for unpublished routes. Test redirects with paths, encoded query strings and a browser timeline fragment. Confirm the research repository remains private and GitHub contribution links are publicly accessible.
+
+Record the deployed Worker version IDs in the release receipt. For rollback, select the last working version with Wrangler's rollback command after checking its identity; custom-domain assignments are separate and must also be checked. Preserve the old site until the new hostname has passed verification.
 
 ## Future database features
 

@@ -2,7 +2,7 @@
 
 A sourced timeline of unexpected AI-agent actions. Incident dates and reporting dates remain separate; each entry links to its evidence and retains the source's uncertainty.
 
-This repository contains the website and its reviewed content: the timeline, About and methodology, Roadmap, and tip/correction page. It is private while the first standalone release is reviewed. Making the repository public and deploying the website are separate decisions.
+This repository contains the website and its reviewed content: the timeline, About and methodology, Roadmap, and tip/correction page.
 
 ## Run locally
 
@@ -28,7 +28,7 @@ Run builds and browser tests sequentially because SvelteKit uses a shared interm
 
 ## Contribute
 
-Use the issue forms to [correct an entry](https://github.com/imadreamerboy/agent-incidents/issues/new?template=correction.yml), [suggest a case or source](https://github.com/imadreamerboy/agent-incidents/issues/new?template=new-evidence.yml), or [report a website problem](https://github.com/imadreamerboy/agent-incidents/issues/new?template=website.yml). These links require access while the repository is private.
+Use the issue forms to [correct an entry](https://github.com/imadreamerboy/agent-incidents/issues/new?template=correction.yml), [suggest a case or source](https://github.com/imadreamerboy/agent-incidents/issues/new?template=new-evidence.yml), or [report a website problem](https://github.com/imadreamerboy/agent-incidents/issues/new?template=website.yml).
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before editing a record. Suggestions are reviewed before publication. For material that should not appear in a GitHub issue, email [agent-incidents@jowimo.com](mailto:agent-incidents@jowimo.com).
 
@@ -46,7 +46,7 @@ The research database, raw captures, candidates and private annotations are main
 
 The site builds to static HTML and assets. `npm run preview:static` serves the build locally with Cloudflare's static-asset routing and real 404 responses. The checked-in configuration has no Cloudflare account, production routes or database binding. GitHub Actions checks changes; it does not deploy.
 
-The existing release remains at [agent-incidents.jowimo.com](https://agent-incidents.jowimo.com/). The planned standalone address is [agent-incidents.com](https://agent-incidents.com/). This repository split does not activate the new domain or redirect.
+The website lives at [agent-incidents.com](https://agent-incidents.com/). The previous subdomain, [agent-incidents.jowimo.com](https://agent-incidents.jowimo.com/), and the www alias redirect there, preserving paths and query strings. See [release operations](docs/release.md) for deployment and verification.
 
 ## Licences
 

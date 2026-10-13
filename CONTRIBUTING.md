@@ -16,7 +16,7 @@ The [collection decisions](docs/collection.md) explain current scope and groupin
 
 ## Private tips
 
-GitHub issues will be public when this repository opens. Do not post confidential material, credentials or personal data in them. Email [agent-incidents@jowimo.com](mailto:agent-incidents@jowimo.com) for a tip that should remain outside GitHub. We may ask for a public source before adding it to the timeline.
+GitHub issues are public. Do not post confidential material, credentials or personal data in them. Email [agent-incidents@jowimo.com](mailto:agent-incidents@jowimo.com) for a tip that should remain outside GitHub. We may ask for a public source before adding it to the timeline.
 
 ## Make a pull request
 

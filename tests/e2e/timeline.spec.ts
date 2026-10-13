@@ -183,11 +183,11 @@ test('About, Roadmap and tip pages are reachable without search', async ({ page 
   await expect(page.getByRole('searchbox')).toHaveCount(0);
 
   await navigation.getByRole('link', { name: 'About' }).click();
-  await expect(page.getByRole('heading', { name: 'Methodology' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What goes into the timeline' })).toBeVisible();
   await expect(navigation.getByRole('link', { name: 'About' })).toHaveAttribute('aria-current', 'page');
 
   await navigation.getByRole('link', { name: 'Roadmap' }).click();
-  await expect(page.getByRole('heading', { name: 'Being considered' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Planned steps' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'URL checks', exact: true })).toBeVisible();
 
   await navigation.getByRole('link', { name: 'Send a tip' }).click();
