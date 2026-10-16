@@ -3,5 +3,6 @@
   { "id": "example-lab-b", "name": "Example lab B" },
   { "id": "example-lab-c", "name": "Example lab C" },
   { "id": "example-empty", "name": "Example lab D" },
+  { "id": "example-evaluator", "name": "Example evaluator" },
   { "id": "unknown", "name": "Unknown provider" }
 ]

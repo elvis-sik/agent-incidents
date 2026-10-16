@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Provider } from '$lib/content/schema';
 
-  let { providers, selected, disabled = false, ontoggle, onreset }: {
+  let { providers, evaluatorOnlyIds, selected, disabled = false, ontoggle, onreset }: {
     providers: Provider[];
+    evaluatorOnlyIds: string[];
     selected: string[];
     disabled?: boolean;
     ontoggle: (id: string) => void;
@@ -10,13 +11,13 @@
   } = $props();
 </script>
 
-<div class="providers" role="group" aria-label="Filter by AI provider">
-  <button type="button" class:active={selected.length === 0} aria-pressed={selected.length === 0} {disabled} onclick={onreset} aria-label="All providers">All</button>
+<div class="providers" role="group" aria-label="Filter by provider or evaluator">
+  <button type="button" class:active={selected.length === 0} aria-pressed={selected.length === 0} {disabled} onclick={onreset} aria-label="All providers and evaluators">All</button>
   {#each providers as provider (provider.id)}
     <button type="button" class:active={selected.includes(provider.id)} aria-pressed={selected.includes(provider.id)} {disabled} onclick={() => ontoggle(provider.id)}>
       <span class="check" class:checked={selected.includes(provider.id)} aria-hidden="true">✓</span>
       {#if provider.logoPath}<img src={provider.logoPath} alt="" width="20" height="20" />{/if}
-      <span>{provider.name}</span>
+      <span>{provider.name}{evaluatorOnlyIds.includes(provider.id) ? ' (evaluator)' : ''}</span>
     </button>
   {/each}
 </div>

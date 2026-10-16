@@ -2,6 +2,7 @@
   import type { Incident, Provider, Source } from '$lib/content/schema';
   import { formatIncidentDate, CONTEXT_LABELS } from '$lib/timeline';
   import SourceList from './SourceList.svelte';
+  import IncidentAttribution from './IncidentAttribution.svelte';
 
   let { id, incident, providers, source, demo, incidentHref }: {
     id: string;
@@ -11,14 +12,13 @@
     demo: boolean;
     incidentHref: string;
   } = $props();
-  let displayedProviders = $derived(incident.providerIds.map((id) => providers.find((provider) => provider.id === id)!));
 </script>
 
 <article {id} aria-labelledby={`${id}-title`} class:unknown={!source.publishedDate}>
   <span class="node" aria-hidden="true"></span>
   <div class="content">
     <SourceList sources={[source]} {demo} headingId={`${id}-title`} showDates={false} />
-    <p class="provider-names"><span class="provider-label">{displayedProviders.length === 1 ? 'Provider' : 'Providers'}</span>{#each displayedProviders as provider (provider.id)}<span class="provider">{#if provider.logoPath}<img src={provider.logoPath} alt="" width="18" height="18" />{/if}{provider.name}</span>{/each}</p>
+    <IncidentAttribution {incident} {providers} compact />
     <p class="context-label">{CONTEXT_LABELS[incident.context]}</p>
     <p class="context"><span>Incident</span> {incident.title}</p>
     <div class="entry-links"><a class="incident-link" href={incidentHref}>View incident and all sources<span aria-hidden="true"> →</span></a><a class="report-permalink" href={`#${id}`} aria-label={`Permalink to ${source.label}`}>Permalink</a></div>
@@ -33,10 +33,6 @@
   article { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 0 48px; scroll-margin-top: 32px; }
   .node { position: absolute; top: 7px; left: -37px; width: 11px; height: 11px; background: var(--ink); border: 1px solid var(--ink); border-radius: 50%; }
   .unknown .node { background: var(--paper); }
-  .provider-names { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 16px 0 0; font-size: 14px; line-height: 1.5; }
-  .provider-label { color: var(--secondary); }
-  .provider { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
-  .provider img { object-fit: contain; }
   .context { margin: 4px 0 6px; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; }
   .context span { color: var(--secondary); margin-right: 6px; }
   .entry-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 8px; font-size: 14px; line-height: 1.6; }

@@ -68,6 +68,7 @@ export const incidentSchema = z.strictObject({
   context: z.enum(['external-deployment', 'internal-deployment', 'training', 'evaluation', 'mixed', 'unknown']),
   contextEvidence: text.optional(),
   providerIds: z.array(slug).min(1).refine((ids) => new Set(ids).size === ids.length, 'Provider IDs must be unique'),
+  evaluatorIds: z.array(slug).refine((ids) => new Set(ids).size === ids.length, 'Evaluator IDs must be unique').refine((ids) => !ids.includes('unknown'), 'Omit unknown evaluators instead of using the unknown provider sentinel').default([]),
   incidentDate: incidentDateSchema,
   reportedDate: calendarDateSchema,
   reportedDateSourceId: slug,

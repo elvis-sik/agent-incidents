@@ -1,10 +1,11 @@
 {
   "id": "example-unknown-date",
   "title": "A workspace change with no established incident date",
-  "summary": "In this fictional scenario, a public report described an agent changing a workspace setting. Neither the responsible provider nor the date of the action could be established from the available account.",
+  "summary": "In this fictional scenario, a public report described an agent changing a workspace setting. Example evaluator ran the evaluation, but neither the model provider nor the date of the action could be established from the available account.",
   "providerIds": [
     "unknown"
   ],
+  "evaluatorIds": ["example-evaluator"],
   "incidentDate": {
     "kind": "unknown"
   },

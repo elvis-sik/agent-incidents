@@ -21,7 +21,7 @@ export function parseView(search: URLSearchParams, providers: Provider[]): { sta
   const raw = search.get('providers');
   const ids = raw === null ? [] : raw.split(',');
   const allowed = new Set(providers.map((provider) => provider.id));
-  if (ids.some((id) => !allowed.has(id))) return { state: { mode, order, providerIds: [] }, error: 'Unrecognised filter: one or more providers are invalid.' };
+  if (ids.some((id) => !allowed.has(id))) return { state: { mode, order, providerIds: [] }, error: 'Unrecognised filter: one or more providers or evaluators are invalid.' };
   if (search.has('q') || search.has('context')) {
     return { state: initial, error: 'Search is not available in this timeline preview.' };
   }
@@ -42,7 +42,7 @@ export function toggleProvider(selected: string[], id: string): string[] {
 
 export function filterIncidents(incidents: Incident[], providerIds: string[]): Incident[] {
   const selected = new Set(providerIds);
-  return incidents.filter((incident) => !selected.size || incident.providerIds.some((id) => selected.has(id)));
+  return incidents.filter((incident) => !selected.size || [...incident.providerIds, ...incident.evaluatorIds].some((id) => selected.has(id)));
 }
 
 const compare = (a: string, b: string) => a < b ? -1 : a > b ? 1 : 0;

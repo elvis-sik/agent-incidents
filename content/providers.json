@@ -4,5 +4,6 @@
   { "id": "google", "name": "Google" },
   { "id": "xai", "name": "xAI" },
   { "id": "meta", "name": "Meta" },
+  { "id": "tencent", "name": "Tencent" },
   { "id": "unknown", "name": "Unknown provider" }
 ]

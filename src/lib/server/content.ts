@@ -34,6 +34,9 @@ export function validateCollection(providerFile: ContentFile, files: ContentFile
     incident.providerIds.forEach((id, index) => {
       if (!providerIds.has(id)) throw new Error(`${file}: providerIds.${index}: Unknown provider ${id}`);
     });
+    incident.evaluatorIds.forEach((id, index) => {
+      if (!providerIds.has(id)) throw new Error(`${file}: evaluatorIds.${index}: Unknown evaluator ${id}`);
+    });
     if (!demo) {
       if (placeholderId.test(incident.id) || /\b(illustrative placeholder|not a real incident|fictional incident)\b/i.test(`${incident.title} ${incident.summary}`)) {
         throw new Error(`${file}: id: Placeholder incident is not allowed in production`);

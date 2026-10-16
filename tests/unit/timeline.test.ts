@@ -61,6 +61,18 @@ describe('chronology and provider membership', () => {
     expect(toggleProvider(['example-lab-a'], 'example-lab-b')).toEqual(['example-lab-a', 'example-lab-b']);
     expect(toggleProvider(['example-lab-a'], 'example-lab-a')).toEqual([]);
   });
+  it('filters by evaluator without changing model-provider attribution or duplicating reports', () => {
+    const filtered = filterIncidents(incidents, ['example-evaluator']);
+    expect(ids(filtered)).toEqual(['example-unknown-date']);
+    expect(filtered[0].providerIds).toEqual(['unknown']);
+    const union = filterIncidents(incidents, ['example-evaluator', 'unknown']);
+    expect(union).toEqual(filtered);
+    expect(groupReports(union).flatMap((group) => group.entries)).toHaveLength(1);
+    for (const mode of ['incident', 'reported'] as const) {
+      const state = { mode, order: 'asc' as const, providerIds: ['example-evaluator'] };
+      expect(parseView(serializeView(state), providers)).toEqual({ state, error: null });
+    }
+  });
 });
 
 describe('shareable URL state', () => {

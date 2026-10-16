@@ -1,5 +1,37 @@
 import { expect, test } from '@playwright/test';
 
+test('evaluator filters preserve distinct roles in both views and copied links', async ({ page }) => {
+  await page.goto('/');
+  const filters = page.getByRole('group', { name: 'Filter by provider or evaluator', exact: true });
+  const evaluator = filters.getByRole('button', { name: 'Example evaluator (evaluator)', exact: true });
+  await evaluator.click();
+  await expect(page).toHaveURL(/providers=example-evaluator$/);
+  await expect(page.locator('article')).toHaveCount(1);
+  const incident = page.locator('#example-unknown-date');
+  await expect(incident.locator('.evaluators')).toHaveText('Evaluator: Example evaluator');
+  await expect(incident.locator('.attribution .providers')).toHaveText('Model provider: Unknown');
+  await page.getByRole('radio', { name: 'Reporting date', exact: true }).check();
+  const report = page.locator('#report--example-unknown-date--example-report');
+  await expect(page.locator('article')).toHaveCount(1);
+  await expect(report.locator('.evaluators')).toHaveText('Evaluator: Example evaluator');
+  await expect(report.locator('.attribution .providers')).toHaveText('Model provider: Unknown');
+  const copiedUrl = page.url();
+  await page.goto('/');
+  await page.goto(copiedUrl);
+  await expect(evaluator).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('article')).toHaveCount(1);
+  await report.getByRole('link', { name: 'View incident and all sources', exact: true }).click();
+  await expect(page).toHaveURL(/providers=example-evaluator#example-unknown-date$/);
+  await expect(incident).toBeInViewport();
+  await page.reload();
+  await expect(evaluator).toHaveAttribute('aria-pressed', 'true');
+  await expect(incident.locator('.attribution .providers')).toHaveText('Model provider: Unknown');
+  await filters.getByRole('button', { name: 'Unknown provider', exact: true }).click();
+  await expect(page.locator('article')).toHaveCount(1);
+  await page.getByRole('radio', { name: 'Reporting date', exact: true }).check();
+  await expect(page.locator('article')).toHaveCount(1);
+});
+
 test('chronology, provider union and history stay in sync', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
@@ -36,7 +68,7 @@ test('chronology, provider union and history stay in sync', async ({ page }) => 
   await expect(articles).toHaveCount(3);
   await page.goForward();
   await expect(articles).toHaveCount(5);
-  await page.getByRole('button', { name: 'All providers', exact: true }).click();
+  await page.getByRole('button', { name: 'All providers and evaluators', exact: true }).click();
   await expect(articles).toHaveCount(7);
   expect(errors).toEqual([]);
 });
@@ -122,7 +154,7 @@ test('invalid filters and valid empty selections have explicit recovery', async 
   await expect(page.locator('article')).toHaveCount(1);
   await expect(page.getByRole('heading', { name: 'Incident date unknown', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Unknown provider', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'All providers', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('button', { name: 'All providers and evaluators', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('article')).toHaveCount(7);
 });
 
@@ -156,7 +188,7 @@ test('prerendered default content remains readable without JavaScript', async ({
   await expect(page.locator('article')).toHaveCount(7);
   await expect(page.getByRole('radio', { name: 'Incident date', exact: true })).toBeChecked();
   await expect(page.getByRole('radio', { name: 'Incident date', exact: true })).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'All providers' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'All providers and evaluators' })).toBeDisabled();
   await expect(page.getByRole('button', { name: 'Oldest first', exact: true })).toBeDisabled();
   // Playwright text selectors omit noscript descendants; check the rendered notice directly.
   await expect(page.locator('noscript .no-script')).toBeVisible();

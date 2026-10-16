@@ -39,7 +39,7 @@ The sixth newly listed report, [Preparing for a restart after reading Slack](htt
 
 The curator requested four new OpenAI reports and the Tencent evaluation activity. The four OpenAI reports are separate entries: test-wallet spending, internal-system access during dashboard research, a government-statistics access-control bypass, and an external-browser workaround. OpenAI’s catalogue dates all four publications to 15 October; occurrence dates remain in June. The dashboard record groups its two evaluations as events. Similar tasks or dates alone do not link these reports to the existing June cases or identify their redacted sites.
 
-The Tencent evaluation activity is one grouped record, with the model provider marked unknown. Tencent identifies the models as third-party models, not Tencent Hy; its role as evaluator is explicit in the summary. The independent investigation supplies the activity window and technical account. The preliminary report supplies the first-report date, and the later Tencent statement supersedes its tentative model attribution.
+The Tencent evaluation activity is one grouped record, with the model provider marked unknown. Tencent identifies the models as third-party models, not Tencent Hy; its role is recorded separately as `evaluatorIds: ["tencent"]` and displayed as “Evaluator: Tencent”. The “Tencent (evaluator)” filter selects the incident and its reports; “Model provider: Unknown” remains visible. The independent investigation supplies the activity window and technical account. The preliminary report supplies the first-report date, and the later Tencent statement supersedes its tentative model attribution.
 
 ## Sources and attribution
 

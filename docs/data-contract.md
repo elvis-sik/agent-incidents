@@ -21,7 +21,8 @@ Store exact calendar dates as `YYYY-MM-DD` strings and validate actual calendar 
 | `summary` | Plain-text account, normally one or two sentences |
 | `context` | Required: `external-deployment`, `internal-deployment`, `training`, `evaluation`, `mixed` or `unknown`; classify the originating task, not the affected system |
 | `contextEvidence` | Optional concise explanation of the authored context and its uncertainty |
-| `providerIds` | Non-empty array of unique IDs from a provider registry; explicit `unknown` when unidentified |
+| `providerIds` | Non-empty array of unique IDs from the shared organisation registry; explicit `unknown` when unidentified |
+| `evaluatorIds` | Optional array of unique, known evaluator IDs from the same registry; omission means an empty list; `unknown` is not a valid evaluator |
 | `incidentDate` | Discriminated union described below |
 | `reportedDate` | Valid exact calendar date |
 | `reportedDateSourceId` | ID of a source in this record supporting the reporting date |
@@ -129,13 +130,17 @@ This example demonstrates the structure only. A [copyable JSON template includin
 
 Keep any implementation fixtures separate from the real collection. The production content check must reject known placeholder records, placeholder providers and placeholder source hosts. Structural validation cannot prove source accuracy; editorial review is still required.
 
-## Provider registry
+## Provider and evaluator registry
 
-Each provider has a stable `id`, display `name` and optional local `logoPath`. Validate all provider references. A missing logo does not imply a missing provider: render its name. Do not invent a logo. `unknown` must have an explicit display name such as `Unknown provider` and no fabricated affiliation.
+`content/providers.json` is the shared organisation registry. Membership alone does not assign a role: incidents reference it through `providerIds` and, where supported, `evaluatorIds`. Keep an unidentified third-party model under `providerIds: ["unknown"]` even when its evaluator is known. Both timeline views label an explicit evaluator separately from the model provider. Existing operator attributions, such as Meta’s internal agent, remain qualified by their summaries.
+
+Filters match either role using a union, with each incident and source counted once. Organisations appearing only as evaluators have an “(evaluator)” suffix in the filter. The existing `providers` URL parameter and `ViewState.providerIds` name are retained for shared-link compatibility; their selections now include evaluator IDs. For example, `?providers=tencent` selects Tencent’s evaluations without attributing the model to Tencent.
+
+Each organisation has a stable `id`, display `name` and optional local `logoPath`. Validate all provider and evaluator references. A missing logo does not imply a missing provider: render its name. Do not invent a logo. `unknown` must have an explicit display name such as `Unknown provider` and no fabricated affiliation.
 
 ## Build failures and editorial review
 
-Fail the content build on duplicate IDs, invalid calendar dates, broken internal source/provider references, absent sources or malformed URLs. Do not silently drop offending records. Keep error messages tied to a file and field.
+Fail the content build on duplicate IDs, invalid calendar dates, broken internal source/provider/evaluator references, absent sources or malformed URLs. Do not silently drop offending records. Keep error messages tied to a file and field.
 
 A transient external-link failure should produce a review report, not deletion of an incident or a silently substituted source. Source accuracy, incident identity and the earliest report date need human or agent evidence review beyond schema validation.
 

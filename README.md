@@ -35,7 +35,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before editing a record. Suggestions are
 ## Structure
 
 - `content/incidents/`: one reviewed JSON record per incident.
-- `content/providers.json` and `content/site.json`: provider names and the explicit editorial update date.
+- `content/providers.json` and `content/site.json`: provider/evaluator names and the explicit editorial update date.
 - `src/`: static SvelteKit application and strict content validation.
 - `tests/`: validation, chronology and browser checks; fictional examples are separate from published records.
 - `docs/`: [content contract](docs/data-contract.md), [collection decisions](docs/collection.md), and [release boundary](docs/release.md).

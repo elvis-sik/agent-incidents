@@ -7,6 +7,7 @@
   "providerIds": [
     "unknown"
   ],
+  "evaluatorIds": ["tencent"],
   "incidentDate": {
     "kind": "range",
     "start": "2026-09-28",

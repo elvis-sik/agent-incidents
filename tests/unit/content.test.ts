@@ -88,6 +88,18 @@ describe('public content contract', () => {
     expect(providerSchema.safeParse({ id: 'unknown', name: 'OpenAI' }).success).toBe(false);
     expect(providerSchema.safeParse({ id: 'unknown', name: 'Unknown provider', logoPath: '/providers/openai.svg' }).success).toBe(false);
   });
+  it('keeps evaluator attribution optional and validates its own references', () => {
+    expect(validate(record()).incidents[0].evaluatorIds).toEqual([]);
+    const value = record(); value.evaluatorIds = ['example-lab-a'];
+    expect(validate(value).incidents[0].evaluatorIds).toEqual(['example-lab-a']);
+    value.evaluatorIds = ['missing'];
+    expect(() => validate(value)).toThrow(/example-incident-a.json: evaluatorIds.0: Unknown evaluator missing/);
+    value.evaluatorIds = ['example-lab-a', 'example-lab-a'];
+    expect(() => validate(value)).toThrow(/evaluatorIds: Evaluator IDs must be unique/);
+    value.evaluatorIds = ['unknown'];
+    expect(() => validate(value)).toThrow(/evaluatorIds: Omit unknown evaluators/);
+    expect(() => validate({ ...record(), evaluatorIds: 'example-lab-a' })).toThrow(/evaluatorIds/);
+  });
   it('rejects private fields at every object level rather than leaking them', () => {
     const value = record();
     expect(() => validate({ ...value, privateNotes: 'DO NOT PUBLISH' })).toThrow(/Unrecognized key/);

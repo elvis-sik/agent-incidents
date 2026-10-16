@@ -26,7 +26,9 @@
   let totalSources = $derived(data.incidents.reduce((total, incident) => total + incident.sources.length, 0));
   let count = $derived(view.mode === 'incident' ? incidentCount : `${filtered ? `${sourceCount} of ${totalSources} sources` : `${sourceCount} ${sourceCount === 1 ? 'source' : 'sources'}`} · ${incidentCount}`);
   let ordering = $derived(`${view.order === 'asc' ? 'Oldest' : 'Newest'} ${view.mode === 'incident' ? 'incidents' : 'sources'} first`);
-  let visibleProviders = $derived(data.providers.filter((provider) => view.providerIds.includes(provider.id) || data.incidents.some((incident) => incident.providerIds.includes(provider.id))));
+  let visibleProviders = $derived(data.providers.filter((provider) => view.providerIds.includes(provider.id) || data.incidents.some((incident) => [...incident.providerIds, ...incident.evaluatorIds].includes(provider.id))));
+
+  let evaluatorOnlyIds = $derived(visibleProviders.filter((provider) => !data.incidents.some((incident) => incident.providerIds.includes(provider.id)) && data.incidents.some((incident) => incident.evaluatorIds.includes(provider.id))).map((provider) => provider.id));
 
   function viewUrl(next: ViewState): URL {
     const url = new URL(window.location.href);
@@ -148,7 +150,7 @@
       </button>
     </div>
     <div class="filter-row">
-      <ProviderFilters providers={visibleProviders} selected={view.providerIds} disabled={!mounted || !!viewError} ontoggle={(id) => changeView({ ...view, providerIds: toggleProvider(view.providerIds, id) })} onreset={() => changeView({ ...view, providerIds: [] })} />
+      <ProviderFilters providers={visibleProviders} {evaluatorOnlyIds} selected={view.providerIds} disabled={!mounted || !!viewError} ontoggle={(id) => changeView({ ...view, providerIds: toggleProvider(view.providerIds, id) })} onreset={() => changeView({ ...view, providerIds: [] })} />
       {#if !viewError}<span class="result-count" aria-hidden="true">{count}</span>{/if}
     </div>
 
