@@ -4,7 +4,7 @@ Initial content added for local review on 27 September 2026, using the source re
 
 ## Inclusion and dates
 
-The current local selection contains 23 parent incidents, 52 events and 54 source entries. It includes deployed-agent reports, evaluations that affected external systems, and selected OpenAI training and internal-deployment cases. Controlled experiments are described as such. Operator accounts remain attributed, and evaluation conditions are stated. Imprecise dates remain in the main chronology, ordered by their earliest known date while preserving their written precision. Only dates without an ordering anchor appear separately; publication dates never stand in for occurrence dates.
+The current local selection contains 28 parent incidents, 54 events and 62 source entries. It includes deployed-agent reports, evaluations that affected external systems, and selected OpenAI training and internal-deployment cases. Controlled experiments are described as such. Operator accounts remain attributed, and evaluation conditions are stated. Imprecise dates remain in the main chronology, ordered by their earliest known date while preserving their written precision. Only dates without an ordering anchor appear separately; publication dates never stand in for occurrence dates.
 
 On 27 September the curator expanded the collection to the reports in OpenAI’s [misalignment catalogue](https://alignment.openai.com/misalignment-reports/), including occurrences in 2025 and controlled training cases. The page title therefore has no single-year restriction. These are selected report-level episodes or behaviour patterns, not a census of individual runs. Other discovery candidates and unresolved allegations still require an editorial decision and inspected sources. The explicitly requested user-image disclosure has an unknown occurrence date and year; a report in 2026 does not establish when its events happened.
 
@@ -34,6 +34,12 @@ The [catalogue](https://alignment.openai.com/misalignment-reports/) now lists 15
 The sixth newly listed report, [Preparing for a restart after reading Slack](https://alignment.openai.com/misalignment-reports/preparing-for-a-restart-after-reading-slack/), is excluded from the incident timeline. OpenAI says the assistant warned its researcher, waited for the required key, used the supported migration command, and did not try to evade shutdown. Its possible significance to future risk does not make this observed action an unexpected or consequential departure. The three notices continue to point to the existing RubyGems, wiki and Hugging Face entries.
 
 - **UNCTAD:** grouped with the broader DSEwiki/Transluce episode at the curator’s explicit request, superseding its initial separate entry. It retains its own event, original research and WSJ source. Matching URLs and IP overlap support the relationship, while the exact swarm/run remains unconfirmed. Howard-Jones says Transluce provided the lead and he examined public records directly. The parent starts with the earliest reviewed UNCTAD scan on 13 April; the child retains its 13 April–19 June window. Scan counts are not successful-intrusion counts.
+
+## Additions reviewed on 16 October
+
+The curator requested four new OpenAI reports and the Tencent evaluation activity. The four OpenAI reports are separate entries: test-wallet spending, internal-system access during dashboard research, a government-statistics access-control bypass, and an external-browser workaround. OpenAI’s catalogue dates all four publications to 15 October; occurrence dates remain in June. The dashboard record groups its two evaluations as events. Similar tasks or dates alone do not link these reports to the existing June cases or identify their redacted sites.
+
+The Tencent evaluation activity is one grouped record, with the model provider marked unknown. Tencent identifies the models as third-party models, not Tencent Hy; its role as evaluator is explicit in the summary. The independent investigation supplies the activity window and technical account. The preliminary report supplies the first-report date, and the later Tencent statement supersedes its tentative model attribution.
 
 ## Sources and attribution
 

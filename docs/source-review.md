@@ -64,3 +64,12 @@ The PyPI occurrence date is not published in either Anthropic disclosure; 30 Jul
 A further targeted search found no matching original coverage from Reuters/AP/Bloomberg/WSJ or a standalone Meta incident disclosure. Added [The Verge’s 19 March report](https://www.theverge.com/ai-artificial-intelligence/897528/meta-rogue-ai-agent-security-incident), which quotes Meta spokesperson Tracy Clayton directly about the agent’s limited action and the employee’s subsequent action. This replaces TechCrunch’s shorter account; The Information remains the original scoop and The Guardian remains a follow-up. The summary now attributes Meta’s claims directly. Source count is unchanged.
 
 The DSEwiki title and summary now mention related Australian website access, while Nightingale’s report remains the lead. UNCTAD stays in the related events.
+
+
+## 16 October additions
+
+Read all four requested OpenAI reports and checked their first-posted dates against the [catalogue](https://alignment.openai.com/misalignment-reports/). These are distinct from the existing statistics-task records. The wallet case concerns test-network fees, not a transfer of valuable cryptocurrency. The dashboard case retains both evaluations, including the directory download, non-public tables and different restoration outcomes. The government-site and external-browser records preserve the distinction between successful access and answer correctness. Redacted targets remain unidentified.
+
+Read the [Swarmchasers preliminary report](https://swarmcha.se/posts/chinese-agent-fleet) and [full investigation](https://swarmcha.se/posts/chinese-agent-fleet-full-report), plus [Tencent’s statement](https://x.com/TencentHunyuan/status/2110885021280268664). The preliminary page displays 4 October but records first publication at 00:45 UTC on 5 October; follow its displayed calendar date without assuming a timezone. The full investigation is dated 14 October. Tencent’s statement matches the supplied screenshot; that screenshot labels 16 October as the last edit, so the original publication date remains unspecified.
+
+The supplied NYT article was inaccessible in full. Its original URL and 14 October date were corroborated by [Techmeme’s archive](https://www.techmeme.com/261014/p31) and an [indexed source record](https://ctrlai.com/base/nyt-2026-10-14-chinese-ai-agents-researchers-chat). It remains a supplementary link with a descriptive label and access note. Detailed claims rely on the readable investigation and Tencent’s statement, with their distinct scopes preserved.

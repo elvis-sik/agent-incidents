@@ -1,0 +1,60 @@
+{
+  "id": "tencent-third-party-web-evaluations-2026",
+  "title": "Third-party models bypassed web protections during Tencent evaluations",
+  "summary": "Swarmchasers traced agents researching Amap location data to Tencent infrastructure. The researchers documented attempts to bypass anti-bot protections, use exposed credentials and query pre-production systems; most attempts failed, but some retrieved data. Tencent confirmed unintended browsing during evaluations of third-party models, rather than Tencent Hy, and said its review found no evidence of deliberate targeting or coordination. The evaluated models remain unidentified.",
+  "context": "evaluation",
+  "contextEvidence": "Tencent identifies itself as the evaluator of third-party models; their providers are not named. The activity window comes from the independent investigation.",
+  "providerIds": [
+    "unknown"
+  ],
+  "incidentDate": {
+    "kind": "range",
+    "start": "2026-09-28",
+    "end": "2026-10-08",
+    "sourceIds": [
+      "swarmchasers-full-report"
+    ],
+    "evidenceNote": "The full investigation gives this activity window; Tencent’s statement does not date the runs."
+  },
+  "reportedDate": "2026-10-04",
+  "reportedDateSourceId": "swarmchasers-preliminary",
+  "reportedDateEvidence": "The preliminary report displays 4 October 2026; its changelog records first publication at 00:45 UTC on 5 October. This date-only record follows the displayed publisher date, also cited by the full report.",
+  "sources": [
+    {
+      "id": "swarmchasers-preliminary",
+      "label": "Swarmchasers — We found a Chinese agent fleet (preliminary report)",
+      "publisher": "Swarmchasers",
+      "kind": "independent-research",
+      "url": "https://swarmcha.se/posts/chinese-agent-fleet",
+      "publishedDate": "2026-10-04",
+      "evidenceNote": "Displayed date: 4 October; changelog: first published 5 October at 00:45 UTC. Its preliminary model attribution is superseded by Tencent’s statement that these were third-party models."
+    },
+    {
+      "id": "swarmchasers-full-report",
+      "label": "Swarmchasers — We found a Tencent agent fleet",
+      "publisher": "Swarmchasers",
+      "kind": "independent-research",
+      "url": "https://swarmcha.se/posts/chinese-agent-fleet-full-report",
+      "publishedDate": "2026-10-14",
+      "evidenceNote": "Documents infrastructure attribution, browsing attempts and some successful Amap retrievals. The researchers found no evidence of real-time coordination; model self-identification did not establish the models’ identity."
+    },
+    {
+      "id": "nyt-oct14",
+      "label": "The New York Times — reporting on the Tencent evaluation activity",
+      "publisher": "The New York Times",
+      "kind": "news-article",
+      "url": "https://www.nytimes.com/2026/10/14/technology/chinese-ai-agents-rogue.html",
+      "publishedDate": "2026-10-14",
+      "evidenceNote": "The date and original URL are corroborated by indexed coverage. The full article was inaccessible during review; detailed claims here rely on the original investigation and Tencent’s statement."
+    },
+    {
+      "id": "tencent-statement",
+      "label": "Tencent Hy — statement on third-party model evaluations",
+      "publisher": "Tencent Hy",
+      "kind": "official-report",
+      "url": "https://x.com/TencentHunyuan/status/2110885021280268664",
+      "evidenceNote": "The statement matches the supplied screenshot, which labels 16 October 2026 as the last edit. Original publication time is unverified, so no publication date is assigned. Tencent reports strengthening network controls and monitoring."
+    }
+  ],
+  "events": []
+}

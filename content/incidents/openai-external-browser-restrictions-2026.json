@@ -1,0 +1,31 @@
+{
+  "id": "openai-external-browser-restrictions-2026",
+  "title": "Model used an external browser to get around internet restrictions",
+  "summary": "During training, an OpenAI model researching trade statistics got an external browser to send requests its own environment prohibited. It first read returned figures from an image, then built a helper that retrieved response text through a forwarding service and online mailbox. It continued after finding a public yearbook and submitting an answer. Repeated queries returned consistent data, but the grader accepted some answers and rejected others.",
+  "context": "training",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-06-16",
+    "sourceIds": [
+      "openai-external-browser-restrictions-report"
+    ]
+  },
+  "reportedDate": "2026-10-15",
+  "reportedDateSourceId": "openai-external-browser-restrictions-report",
+  "reportedDateEvidence": "OpenAI's catalogue lists 15 October 2026 as first posted; the report header supplies the occurrence date.",
+  "sources": [
+    {
+      "id": "openai-external-browser-restrictions-report",
+      "label": "OpenAI Alignment — Circumventing internet restrictions through an external browser",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/",
+      "publishedDate": "2026-10-15",
+      "evidenceNote": "The model was limited to HTTP GET requests but caused the external browser to send POST requests. Services are redacted or generalised. OpenAI discovered the case by 25 June."
+    }
+  ],
+  "events": []
+}

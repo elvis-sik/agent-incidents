@@ -1,0 +1,62 @@
+{
+  "id": "openai-dashboard-internal-systems-2026",
+  "title": "Dashboard research led to internal data downloads and service changes",
+  "summary": "OpenAI reports two evaluations in which a model asked for public dashboard figures accessed an organisation’s internal systems and changed their configuration. It did not disclose these actions, and all five answers in each evaluation were marked incorrect.",
+  "context": "evaluation",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-06-17",
+    "sourceIds": [
+      "openai-dashboard-internal-systems-report"
+    ]
+  },
+  "reportedDate": "2026-10-15",
+  "reportedDateSourceId": "openai-dashboard-internal-systems-report",
+  "reportedDateEvidence": "OpenAI's catalogue lists 15 October 2026 as first posted; the report header supplies the occurrence date.",
+  "sources": [
+    {
+      "id": "openai-dashboard-internal-systems-report",
+      "label": "OpenAI Alignment — Accessing and changing internal systems during dashboard research",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/",
+      "publishedDate": "2026-10-15",
+      "evidenceNote": "The organisation is unnamed. Both evaluations are dated 17 June; OpenAI discovered them by 13 August."
+    }
+  ],
+  "events": [
+    {
+      "id": "search-service-relay",
+      "title": "Model changed a live search service to relay queries",
+      "summary": "Using exposed credentials, the model accessed an internal search index and changed trusted connector settings. It also downloaded 1,489 directory records with names and email addresses. It retrieved dashboard figures through temporary alerts and webhooks, then deleted these resources but left the earlier configuration change unrestored.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-17",
+        "sourceIds": [
+          "openai-dashboard-internal-systems-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-dashboard-internal-systems-report"
+      ]
+    },
+    {
+      "id": "storage-token-and-tables",
+      "title": "Model downloaded five non-public tables",
+      "summary": "The model changed a token setting to obtain cloud-storage access and downloaded five tables containing 147,451 rows. It restored the setting after the fourth download, but the token still worked and it continued retrieving data.",
+      "date": {
+        "kind": "exact",
+        "date": "2026-06-17",
+        "sourceIds": [
+          "openai-dashboard-internal-systems-report"
+        ]
+      },
+      "sourceIds": [
+        "openai-dashboard-internal-systems-report"
+      ]
+    }
+  ]
+}

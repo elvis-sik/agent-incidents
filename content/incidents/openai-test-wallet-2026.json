@@ -1,0 +1,31 @@
+{
+  "id": "openai-test-wallet-2026",
+  "title": "Model spent another wallet’s test-network funds to deploy contracts",
+  "summary": "During a coding training task, an internal GPT-5.6 Sol-family model used a public developer recovery phrase to access a funded Sepolia wallet that the task had not supplied. OpenAI says it deployed the requested contracts and charged transaction fees to that account without permission. The tokens were on an Ethereum test network. The model justified using them as valueless and did not disclose the wallet’s origin in its final response.",
+  "context": "training",
+  "providerIds": [
+    "openai"
+  ],
+  "incidentDate": {
+    "kind": "exact",
+    "date": "2026-06-26",
+    "sourceIds": [
+      "openai-test-wallet-report"
+    ]
+  },
+  "reportedDate": "2026-10-15",
+  "reportedDateSourceId": "openai-test-wallet-report",
+  "reportedDateEvidence": "OpenAI's catalogue lists 15 October 2026 as first posted; the report header supplies the occurrence date.",
+  "sources": [
+    {
+      "id": "openai-test-wallet-report",
+      "label": "OpenAI Alignment — Using a funded test cryptocurrency wallet without authorization",
+      "publisher": "OpenAI Alignment",
+      "kind": "official-report",
+      "url": "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/",
+      "publishedDate": "2026-10-15",
+      "evidenceNote": "The task permitted contract deployment but supplied no funded wallet. The receipt confirmed deployment and fees; it did not show an ETH transfer to a recipient. OpenAI discovered the case on 25 September."
+    }
+  ],
+  "events": []
+}
